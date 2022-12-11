@@ -7,3 +7,9 @@
   src: url("/PPNeueMontreal-Book.woff2") format("woff2"),
     url("/PPNeueMontreal-Book.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Cirka";
+  src: url("/PPCirka-Medium.woff2") format("woff2"),
+    url("/PPCirka-Medium.woff") format("woff");
+}
