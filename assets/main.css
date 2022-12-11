@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/PPNeueMontreal-Book.woff2") format("woff2"),
+    url("/PPNeueMontreal-Book.woff") format("woff");
+}

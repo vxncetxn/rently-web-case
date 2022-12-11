@@ -4,11 +4,13 @@ specifiers:
   '@nuxtjs/tailwindcss': ^6.1.3
   nuxt: 3.0.0
   tailwindcss: ^3.2.4
+  tailwindcss-capsize: ^3.0.2
 
 devDependencies:
   '@nuxtjs/tailwindcss': 6.1.3
   nuxt: 3.0.0
   tailwindcss: 3.2.4
+  tailwindcss-capsize: 3.0.2_tailwindcss@3.2.4
 
 packages:
 
@@ -307,6 +309,10 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+    dev: true
+
+  /@capsizecss/core/3.0.0:
+    resolution: {integrity: sha512-tJNEWMmhHcU5z6ITAiVNN9z+PCTylybVIJqgX7Ts4zN66fe/W2Fe5UWJCCZIP/5uutsl5fYOaVVHZIjsuTVhBQ==}
     dev: true
 
   /@cloudflare/kv-asset-handler/0.2.0:
@@ -4827,6 +4833,16 @@ packages:
       tailwindcss: 3.2.4
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /tailwindcss-capsize/3.0.2_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-w/N+sZbl3MQWxdtiRf9onEWA+gklH6FGHUcxcXiaw2zYqdIrpPWcig5Y3h9D69gLsd5xJkL3lH6SqF0F+jgQZg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      tailwindcss: '>= 1.5'
+    dependencies:
+      '@capsizecss/core': 3.0.0
+      tailwindcss: 3.2.4
     dev: true
 
   /tailwindcss/3.2.4:

@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center h-screen">
-    <h1 class="text-3xl font-bold text-red-500">
-      How to install Tailwind CSS 3 in Nuxt 3
+    <h1 class="font-sans text-20 capsize text-red-500 border border-green-500">
+      Displaying 108 apartments
     </h1>
   </div>
 </template>
