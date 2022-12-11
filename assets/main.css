@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Book.woff2") format("woff2"),
+    url("/fonts/PPNeueMontreal-Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Cirka";
+  src: url("/fonts/PPCirka-Medium.woff2") format("woff2"),
+    url("/fonts/PPCirka-Medium.woff") format("woff");
+}
