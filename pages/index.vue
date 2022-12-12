@@ -1,6 +1,5 @@
 <script setup></script>
 
 <template>
-  <Navbar />
-  <NuxtPage />
+  <div class="h-[2000px]">Hello</div>
 </template>
