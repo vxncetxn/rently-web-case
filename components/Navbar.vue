@@ -2,7 +2,7 @@
 
 <template>
   <nav
-    class="sticky left-0 top-0 w-screen h-80 border-b border-[#EBEBEB] grid grid-cols-3 items-center px-64 bg-white"
+    class="sticky top-0 z-10 w-screen h-80 border-b border-[#EBEBEB] grid grid-cols-3 items-center px-64 bg-white"
     role="navigation"
     aria-label="main navigation"
   >
