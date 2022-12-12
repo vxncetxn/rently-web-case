@@ -13,3 +13,7 @@
   src: url("/fonts/PPCirka-Medium.woff2") format("woff2"),
     url("/fonts/PPCirka-Medium.woff") format("woff");
 }
+
+html {
+  overscroll-behavior: none;
+}
