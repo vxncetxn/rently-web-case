@@ -3,7 +3,7 @@ import { bool, func, string } from "vue-types";
 import XMarkIcon from "~/assets/icons/x-mark.svg";
 
 defineProps({
-  isOpen: bool().def(false).isRequired,
+  isOpen: bool().isRequired,
   closeHandler: func().isRequired,
   title: string().isRequired,
 });

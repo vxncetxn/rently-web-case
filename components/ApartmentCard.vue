@@ -1,32 +1,37 @@
 <script setup>
 import { computed } from "vue";
-import { shape, oneOf, integer } from "vue-types";
+import { string, bool, shape, oneOf, integer, arrayOf } from "vue-types";
 
 const props = defineProps({
   apartment: shape({
     id: integer(),
-    image: String,
-    isWholeApt: Boolean,
+    image: string(),
+    isWholeHouse: bool(),
     propertyType: oneOf(["HDB", "Condo", "Landed"]),
     numRooms: integer(),
     address: {
       block: integer(),
-      street: String,
+      street: string(),
       floor: integer(),
       unit: integer(),
       postalCode: integer(),
-      locale: String,
+      locale: string(),
     },
     area: {
       sqft: integer(),
       sqm: integer(),
     },
-    items: integer(),
+    items: arrayOf(
+      shape({
+        type: string(),
+        image: string(),
+      })
+    ),
   }).isRequired,
 });
 
 const title = computed(() => {
-  return props.apartment.isWholeApt
+  return props.apartment.isWholeHouse
     ? `${props.apartment.numRooms}-Room ${props.apartment.propertyType} at ${props.apartment.address.locale}`
     : `Room within ${props.apartment.propertyType} at ${props.apartment.address.locale}`;
 });
@@ -53,14 +58,20 @@ const title = computed(() => {
         >
         <div class="flex flex-wrap mt-24 sm:mt-auto gap-x-8 gap-y-12">
           <Text size="sm" color="grey">{{
-            apartment.isWholeApt ? "Whole Apt" : "Single Room"
+            apartment.isWholeHouse ? "Whole House" : "Single Room"
           }}</Text>
           <Text size="sm" color="grey">·</Text>
           <Text size="sm" color="grey"
             >{{ apartment.area.sqft }} sqft / {{ apartment.area.sqm }} sqm</Text
           >
           <Text size="sm" color="grey">·</Text>
-          <Text size="sm" color="grey">{{ apartment.items }} items</Text>
+          <Text size="sm" color="grey">{{
+            apartment.items.length > 1
+              ? `${apartment.items.length} items`
+              : apartment.items.length === 1
+              ? "1 item"
+              : "No items"
+          }}</Text>
         </div>
       </div>
     </div>

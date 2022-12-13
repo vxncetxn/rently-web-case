@@ -2,7 +2,7 @@
   {
     "id": 1016153,
     "image": "apartment-1",
-    "isWholeApt": true,
+    "isWholeHouse": true,
     "propertyType": "HDB",
     "numRooms": 4,
     "address": {
@@ -17,12 +17,89 @@
       "sqft": 1001,
       "sqm": 93
     },
-    "items": 12
+    "items": [
+      {
+        "type": "Bathtub",
+        "image": "bathtub.jpg"
+      },
+      {
+        "type": "Bidet",
+        "image": "bidet.jpg"
+      },
+      {
+        "type": "Washing Machine",
+        "image": "washing-machine.jpg"
+      },
+      {
+        "type": "TV",
+        "image": "tv.jpg"
+      },
+      {
+        "type": "Wifi",
+        "image": ""
+      },
+      {
+        "type": "Refrigerator",
+        "image": "refrigerator.jpg"
+      },
+      {
+        "type": "Toaster",
+        "image": "toaster.jpg"
+      },
+      {
+        "type": "Coffee Maker",
+        "image": "coffee-maker.jpg"
+      },
+      {
+        "type": "Kettle",
+        "image": "kettle.jpg"
+      },
+      {
+        "type": "Dining Table",
+        "image": "dining-table.jpg"
+      },
+      {
+        "type": "Oven",
+        "image": "oven.jpg"
+      },
+      {
+        "type": "Aircon",
+        "image": ""
+      },
+      {
+        "type": "Ceiling Fan",
+        "image": "ceiling-fan.jpg"
+      },
+      {
+        "type": "First Aid Kit",
+        "image": ""
+      },
+      {
+        "type": "Fire Extinguisher",
+        "image": ""
+      },
+      {
+        "type": "Iron",
+        "image": ""
+      },
+      {
+        "type": "Safe",
+        "image": ""
+      },
+      {
+        "type": "Wardrobe",
+        "image": ""
+      },
+      {
+        "type": "Work Desk",
+        "image": ""
+      }
+    ]
   },
   {
     "id": 29248487,
     "image": "apartment-2",
-    "isWholeApt": false,
+    "isWholeHouse": false,
     "propertyType": "Condo",
     "numRooms": 1,
     "address": {
@@ -37,12 +114,49 @@
       "sqft": 215,
       "sqm": 20
     },
-    "items": 8
+    "items": [
+      {
+        "type": "Shower",
+        "image": ""
+      },
+      {
+        "type": "Hairdryer",
+        "image": ""
+      },
+      {
+        "type": "Washing Machine",
+        "image": "washing-machine.jpg"
+      },
+      {
+        "type": "TV",
+        "image": "tv.jpg"
+      },
+      {
+        "type": "Wifi",
+        "image": ""
+      },
+      {
+        "type": "Refrigerator",
+        "image": "refrigerator.jpg"
+      },
+      {
+        "type": "Dining Table",
+        "image": "dining-table.jpg"
+      },
+      {
+        "type": "Microwave",
+        "image": ""
+      },
+      {
+        "type": "Aircon",
+        "image": ""
+      }
+    ]
   },
   {
     "id": 24231713,
     "image": "apartment-3",
-    "isWholeApt": true,
+    "isWholeHouse": true,
     "propertyType": "HDB",
     "numRooms": 4,
     "address": {
@@ -57,12 +171,73 @@
       "sqft": 1205,
       "sqm": 112
     },
-    "items": 20
+    "items": [
+      {
+        "type": "Shower",
+        "image": ""
+      },
+      {
+        "type": "Hairdryer",
+        "image": ""
+      },
+      {
+        "type": "Washing Machine",
+        "image": ""
+      },
+      {
+        "type": "TV",
+        "image": "tv.jpg"
+      },
+      {
+        "type": "Wifi",
+        "image": ""
+      },
+      {
+        "type": "Refrigerator",
+        "image": ""
+      },
+      {
+        "type": "Dining Table",
+        "image": ""
+      },
+      {
+        "type": "Microwave",
+        "image": "microwave.jpg"
+      },
+      {
+        "type": "Oven",
+        "image": "oven.jpg"
+      },
+      {
+        "type": "Aircon",
+        "image": ""
+      },
+      {
+        "type": "Wardrobe",
+        "image": "wardrobe.jpg"
+      },
+      {
+        "type": "Baby Cot",
+        "image": "baby-cot"
+      },
+      {
+        "type": "Work Desk",
+        "image": "work-desk.jpg"
+      },
+      {
+        "type": "Smoke Alarm",
+        "image": ""
+      },
+      {
+        "type": "Dishwasher",
+        "image": "dishwasher.jpg"
+      }
+    ]
   },
   {
     "id": 20471860,
     "image": "apartment-4",
-    "isWholeApt": true,
+    "isWholeHouse": true,
     "propertyType": "HDB",
     "numRooms": 5,
     "address": {
@@ -77,6 +252,6 @@
       "sqft": 1260,
       "sqm": 117
     },
-    "items": 17
+    "items": []
   }
 ]
