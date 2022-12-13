@@ -4,7 +4,7 @@ import RentlyLogomark from "~/assets/rently-logomark.svg";
 
 <template>
   <nav
-    class="sticky top-0 z-20 w-screen h-48 border-b border-[#EBEBEB] grid grid-cols-3 items-center px-16 bg-white sm:h-64 lg:h-80 sm:px-40 lg:px-64"
+    class="sticky top-0 z-20 w-screen h-[var(--navbar-h-def)] border-b border-[#EBEBEB] grid grid-cols-3 items-center px-16 bg-white sm:h-[var(--navbar-h-sm)] lg:h-[var(--navbar-h-lg)] sm:px-40 lg:px-64"
     role="navigation"
     aria-label="main navigation"
   >

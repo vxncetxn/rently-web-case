@@ -6,7 +6,7 @@ import data from "../data.json";
   <Searchbar />
   <div class="relative">
     <div
-      class="sticky top-[88px] sm:top-[104px] lg:top-[144px] left-0 w-screen h-[calc(100vh-88px)] sm:h-[calc(100vh-104px)] lg:h-[calc(100vh-144px)] flex justify-end"
+      class="sticky top-[var(--bars-h-def)] sm:top-[var(--bars-h-sm)] lg:top-[var(--bars-h-lg)] left-0 w-screen h-[var(--not-bars-h-def)] sm:h-[var(--not-bars-h-sm)] lg:h-[var(--not-bars-h-lg)] flex justify-end"
     >
       <img
         class="object-cover w-full h-[calc((100vh-88px)*0.4)] sm:h-[calc((100vh-104px)*0.4)] lg:w-2/5 lg:h-full"
@@ -15,7 +15,7 @@ import data from "../data.json";
       />
     </div>
     <div
-      class="w-full lg:w-3/5 relative z-10 flex flex-col px-8 py-64 lg:py-32 sm:px-20 lg:px-32 -mt-[calc((100vh-88px)*0.65)] sm:-mt-[calc((100vh-104px)*0.65)] lg:-mt-[calc(100vh-144px)] bg-white rounded-t-32"
+      class="w-full lg:w-3/5 relative z-10 flex flex-col px-8 py-64 lg:py-32 sm:px-20 lg:px-32 -mt-[calc(var(--not-bars-h-def)*0.65)] sm:-mt-[calc(var(--not-bars-h-sm)*0.65)] lg:-mt-[var(--not-bars-h-lg)] bg-white rounded-t-32"
     >
       <div class="px-8 sm:px-20 lg:px-32">
         <Text color="grey">Displaying {{ data.length }} apartments</Text>
