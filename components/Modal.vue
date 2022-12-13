@@ -24,7 +24,7 @@ defineProps({
         v-if="isOpen"
       >
         <div class="flex items-center justify-between">
-          <h3 class="font-sans text-24 capsize">{{ title }}</h3>
+          <HeaderThree>{{ title }}</HeaderThree>
           <button
             class="flex items-center justify-center w-48 h-48"
             @click="closeHandler"

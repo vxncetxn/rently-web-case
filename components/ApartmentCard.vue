@@ -39,9 +39,9 @@ const title = computed(() => {
         :alt="`Cover image for ${title}`"
       />
       <div class="flex flex-col gap-y-16">
-        <h3 class="font-sans text-24 capsize">
+        <HeaderThree>
           {{ title }}
-        </h3>
+        </HeaderThree>
         <Text size="sm" color="grey"
           >{{ apartment.address.block }} {{ apartment.address.street }} #{{
             apartment.address.floor
