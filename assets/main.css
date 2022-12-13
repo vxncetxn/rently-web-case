@@ -13,3 +13,52 @@
   src: url("/fonts/PPCirka-Medium.woff2") format("woff2"),
     url("/fonts/PPCirka-Medium.woff") format("woff");
 }
+
+:root {
+  --navbar-h-def: 48px;
+  --navbar-h-sm: 64px;
+  --navbar-h-lg: 80px;
+
+  --secbar-h-def: 40px;
+  --secbar-h-sm: 48px;
+  --secbar-h-lg: 64px;
+
+  --bars-h-def: calc(var(--navbar-h-def) + var(--secbar-h-def));
+  --bars-h-sm: calc(var(--navbar-h-sm) + var(--secbar-h-sm));
+  --bars-h-lg: calc(var(--navbar-h-lg) + var(--secbar-h-lg));
+
+  --not-bars-h-def: calc(100vh - var(--bars-h-def));
+  --not-bars-h-sm: calc(100vh - var(--bars-h-sm));
+  --not-bars-h-lg: calc(100vh - var(--bars-h-lg));
+}
+
+html {
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+.overlay-anim-enter-from,
+.overlay-anim-leave-to {
+  opacity: 0;
+}
+.overlay-anim-enter-active,
+.overlay-anim-leave-active {
+  transition: opacity 400ms cubic-bezier(0.45, 0, 0.55, 1);
+}
+.overlay-anim-enter-to,
+.overlay-anim-leave-from {
+  opacity: 1;
+}
+
+.modal-anim-enter-from,
+.modal-anim-leave-to {
+  transform: translateX(calc(100% + 128px));
+}
+.modal-anim-enter-active,
+.modal-anim-leave-active {
+  transition: transform 400ms cubic-bezier(0.45, 0, 0.55, 1);
+}
+.modal-anim-enter-to,
+.modal-anim-leave-from {
+  transform: translateX(0);
+}

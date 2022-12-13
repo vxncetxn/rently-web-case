@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1016153,
+    "image": "apartment-1",
+    "isWholeApt": true,
+    "propertyType": "HDB",
+    "numRooms": 4,
+    "address": {
+      "block": 383,
+      "street": "Bukit Timah Rd",
+      "floor": 19,
+      "unit": 7,
+      "postalCode": 310856,
+      "locale": "Bukit Timah"
+    },
+    "area": {
+      "sqft": 1001,
+      "sqm": 93
+    },
+    "items": 12
+  },
+  {
+    "id": 29248487,
+    "image": "apartment-2",
+    "isWholeApt": false,
+    "propertyType": "Condo",
+    "numRooms": 1,
+    "address": {
+      "block": 64,
+      "street": "Mattar Rd",
+      "floor": 4,
+      "unit": 43,
+      "postalCode": 322468,
+      "locale": "Geylang"
+    },
+    "area": {
+      "sqft": 215,
+      "sqm": 20
+    },
+    "items": 8
+  },
+  {
+    "id": 24231713,
+    "image": "apartment-3",
+    "isWholeApt": true,
+    "propertyType": "HDB",
+    "numRooms": 4,
+    "address": {
+      "block": 2,
+      "street": "Serangoon Gardens",
+      "floor": 6,
+      "unit": 33,
+      "postalCode": 300461,
+      "locale": "Serangoon"
+    },
+    "area": {
+      "sqft": 1205,
+      "sqm": 112
+    },
+    "items": 20
+  },
+  {
+    "id": 20471860,
+    "image": "apartment-4",
+    "isWholeApt": true,
+    "propertyType": "HDB",
+    "numRooms": 5,
+    "address": {
+      "block": 46,
+      "street": "Choa Chu Kang Loop",
+      "floor": 24,
+      "unit": 2,
+      "postalCode": 311899,
+      "locale": "Choa Chu Kang"
+    },
+    "area": {
+      "sqft": 1260,
+      "sqm": 117
+    },
+    "items": 17
+  }
+]
