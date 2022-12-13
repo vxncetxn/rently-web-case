@@ -9,7 +9,7 @@ const closeHandler = () => (isOpen.value = false);
 
 <template>
   <div
-    class="flex items-center gap-x-16 sticky top-48 z-10 w-screen h-40 border-b border-[#EBEBEB] px-16 bg-white focus-within:shadow-lg sm:gap-x-20 lg:gap-x-24 sm:h-48 lg:h-64 sm:top-64 lg:top-80 sm:px-40 lg:px-64"
+    class="flex items-center gap-x-16 sticky top-48 z-20 w-screen h-40 border-b border-[#EBEBEB] px-16 bg-white focus-within:shadow-lg sm:gap-x-20 lg:gap-x-24 sm:h-48 lg:h-64 sm:top-64 lg:top-80 sm:px-40 lg:px-64"
   >
     <MagnifyingGlassIcon class="w-24 h-24 shrink-0" />
     <input

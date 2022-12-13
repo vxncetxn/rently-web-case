@@ -13,14 +13,14 @@ defineProps({
   <Teleport to="#portal">
     <Transition name="overlay-anim"
       ><div
-        class="fixed top-0 left-0 z-20 flex justify-end w-screen h-screen p-64 bg-black/50"
+        class="fixed top-0 left-0 z-30 flex justify-end w-screen h-screen p-64 bg-black/50"
         v-if="isOpen"
         @click="closeHandler"
       ></div
     ></Transition>
     <Transition name="modal-anim"
       ><div
-        class="fixed z-20 bg-white border border-[#EBEBEB] w-[480px] max-h-[calc(100vh-128px)] rounded-8 bottom-64 right-64 px-40 py-32 overflow-y-scroll"
+        class="fixed z-30 bg-white border border-[#EBEBEB] w-[480px] max-h-[calc(100vh-128px)] rounded-8 bottom-64 right-64 px-40 py-32 overflow-y-scroll"
         v-if="isOpen"
       >
         <div class="flex items-center justify-between">

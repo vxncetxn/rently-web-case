@@ -16,6 +16,7 @@
 
 html {
   overscroll-behavior: none;
+  overflow-x: hidden;
 }
 
 .overlay-anim-enter-from,

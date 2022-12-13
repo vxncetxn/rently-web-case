@@ -4,8 +4,19 @@ import data from "../data.json";
 
 <template>
   <Searchbar />
-  <div class="flex flex-col-reverse lg:flex-row">
-    <div class="flex flex-col w-full px-8 mt-32 sm:px-20 lg:px-32 lg:w-3/5">
+  <div class="relative">
+    <div
+      class="sticky top-[88px] sm:top-[104px] lg:top-[144px] left-0 w-screen h-[calc(100vh-88px)] sm:h-[calc(100vh-104px)] lg:h-[calc(100vh-144px)] flex justify-end"
+    >
+      <img
+        class="object-cover w-full h-[calc((100vh-88px)*0.4)] sm:h-[calc((100vh-104px)*0.4)] lg:w-2/5 lg:h-full"
+        src="/map-placeholder.png"
+        alt="placeholder for map component"
+      />
+    </div>
+    <div
+      class="w-full lg:w-3/5 relative z-10 flex flex-col px-8 py-64 lg:py-32 sm:px-20 lg:px-32 -mt-[calc((100vh-88px)*0.65)] sm:-mt-[calc((100vh-104px)*0.65)] lg:-mt-[calc(100vh-144px)] bg-white rounded-t-32"
+    >
       <div class="px-8 sm:px-20 lg:px-32">
         <Text color="grey">Displaying {{ data.length }} apartments</Text>
       </div>
@@ -14,15 +25,6 @@ import data from "../data.json";
           <ApartmentCard :apartment="apartment" />
         </li>
       </ul>
-    </div>
-    <div
-      class="lg:sticky h-[calc((100vh-88px)*0.4)] lg:h-[calc(100vh-144px)] top-[144px] w-full lg:w-2/5"
-    >
-      <img
-        class="object-cover w-full h-full"
-        src="/map-placeholder.png"
-        alt="placeholder for map component"
-      />
     </div>
   </div>
 </template>
