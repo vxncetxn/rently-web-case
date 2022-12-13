@@ -26,7 +26,9 @@ const props = defineProps({
 });
 
 const title = computed(() => {
-  return `${props.apartment.numRooms}-Room ${props.apartment.propertyType} at ${props.apartment.address.locale}`;
+  return props.apartment.isWholeApt
+    ? `${props.apartment.numRooms}-Room ${props.apartment.propertyType} at ${props.apartment.address.locale}`
+    : `Room within ${props.apartment.propertyType} at ${props.apartment.address.locale}`;
 });
 </script>
 
@@ -50,6 +52,10 @@ const title = computed(() => {
           }})</Text
         >
         <div class="flex mt-auto gap-x-8">
+          <Text size="sm" color="grey">{{
+            apartment.isWholeApt ? "Whole Apt" : "Single Room"
+          }}</Text>
+          <Text size="sm" color="grey">·</Text>
           <Text size="sm" color="grey"
             >{{ apartment.area.sqft }} sqft / {{ apartment.area.sqm }} sqm</Text
           >
