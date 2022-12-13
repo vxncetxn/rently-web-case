@@ -73,7 +73,6 @@ module.exports = {
       16: "1rem",
       full: "50%",
     },
-    extend: {},
   },
   plugins: [require("tailwindcss-capsize")],
 };

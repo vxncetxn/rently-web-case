@@ -6,9 +6,9 @@ import data from "../data.json";
   <Searchbar />
   <div class="flex">
     <div class="flex flex-col p-32 shrink-0">
-      <p class="font-sans text-20 text-[#7A7A7A] pl-32">
-        Displaying {{ data.length }} apartments
-      </p>
+      <div class="px-32">
+        <Text color="grey">Displaying {{ data.length }} apartments</Text>
+      </div>
       <ul class="flex flex-col mt-16 gap-y-16">
         <li v-for="apartment in data" :key="apartment.id">
           <ApartmentCard :apartment="apartment" />

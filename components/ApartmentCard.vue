@@ -1,7 +1,29 @@
 <script setup>
 import { computed } from "vue";
+import { shape, oneOf, integer } from "vue-types";
 
-const props = defineProps(["apartment"]);
+const props = defineProps({
+  apartment: shape({
+    id: integer(),
+    image: String,
+    isWholeApt: Boolean,
+    propertyType: oneOf(["HDB", "Condo", "Landed"]),
+    numRooms: integer(),
+    address: {
+      block: integer(),
+      street: String,
+      floor: integer(),
+      unit: integer(),
+      postalCode: integer(),
+      locale: String,
+    },
+    area: {
+      sqft: integer(),
+      sqm: integer(),
+    },
+    items: integer(),
+  }).isRequired,
+});
 
 const title = computed(() => {
   return `${props.apartment.numRooms}-Room ${props.apartment.propertyType} at ${props.apartment.address.locale}`;
@@ -16,21 +38,23 @@ const title = computed(() => {
         :src="`/mock-images/${apartment.image}.webp`"
         :alt="`Cover image for ${title}`"
       />
-      <div class="flex flex-col">
-        <p class="font-sans text-24 capsize">
+      <div class="flex flex-col gap-y-16">
+        <h3 class="font-sans text-24 capsize">
           {{ title }}
-        </p>
-        <p class="font-sans text-18 capsize text-[#7A7A7A] mt-16">
-          {{ apartment.address.block }} {{ apartment.address.street }} #{{
+        </h3>
+        <Text size="sm" color="grey"
+          >{{ apartment.address.block }} {{ apartment.address.street }} #{{
             apartment.address.floor
-          }}-{{ apartment.address.unit }}, S({{ apartment.address.postalCode }})
-        </p>
-        <div
-          class="flex font-sans text-18 capsize text-[#7A7A7A] mt-auto space-x-8"
+          }}-{{ apartment.address.unit }}, S({{
+            apartment.address.postalCode
+          }})</Text
         >
-          <p>{{ apartment.area.sqft }} sqft / {{ apartment.area.sqm }} sqm</p>
-          <p>·</p>
-          <p>{{ apartment.items }} items</p>
+        <div class="flex mt-auto gap-x-8">
+          <Text size="sm" color="grey"
+            >{{ apartment.area.sqft }} sqft / {{ apartment.area.sqm }} sqm</Text
+          >
+          <Text size="sm" color="grey">·</Text>
+          <Text size="sm" color="grey">{{ apartment.items }} items</Text>
         </div>
       </div>
     </div>
