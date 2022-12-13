@@ -1,5 +1,10 @@
 <script setup>
+import { ref } from "vue";
 import MagnifyingGlassIcon from "~/assets/icons/magnifying-glass.svg";
+
+const isOpen = ref(false);
+const openHandler = () => (isOpen.value = true);
+const closeHandler = () => (isOpen.value = false);
 </script>
 
 <template>
@@ -11,7 +16,16 @@ import MagnifyingGlassIcon from "~/assets/icons/magnifying-glass.svg";
       class="w-full font-sans text-black text-20 capsize focus:outline-none"
       placeholder="Search location, house type, etc."
     />
-    <SecondaryButton>Inventory</SecondaryButton>
+    <SecondaryButton @click="openHandler">Inventory</SecondaryButton>
     <PrimaryButton>Search</PrimaryButton>
   </div>
+  <Modal
+    :isOpen="isOpen"
+    :close-handler="closeHandler"
+    title="Inventory Filters"
+  >
+    <div class="h-[300px] flex justify-end items-end">
+      <PrimaryButton>Apply inventory filters</PrimaryButton>
+    </div>
+  </Modal>
 </template>

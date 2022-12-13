@@ -3,4 +3,5 @@
 <template>
   <Navbar />
   <NuxtPage />
+  <div id="portal"></div>
 </template>
