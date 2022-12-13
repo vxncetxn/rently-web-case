@@ -20,7 +20,7 @@ defineProps({
     ></Transition>
     <Transition name="modal-anim"
       ><div
-        class="fixed z-30 bg-white border border-[#EBEBEB] w-[480px] max-h-[calc(100vh-128px)] rounded-8 bottom-64 right-64 px-40 py-32 overflow-y-scroll"
+        class="fixed z-30 bg-white border border-neutral-200 w-[480px] max-h-[calc(100vh-128px)] rounded-8 bottom-64 right-64 px-40 py-32 overflow-y-scroll"
         v-if="isOpen"
       >
         <div class="flex items-center justify-between">

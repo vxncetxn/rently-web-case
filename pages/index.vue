@@ -9,7 +9,7 @@ import data from "../data.json";
       class="sticky top-[var(--bars-h-def)] sm:top-[var(--bars-h-sm)] lg:top-[var(--bars-h-lg)] left-0 w-screen h-[var(--not-bars-h-def)] sm:h-[var(--not-bars-h-sm)] lg:h-[var(--not-bars-h-lg)] flex justify-end"
     >
       <img
-        class="object-cover w-full h-[calc((100vh-88px)*0.4)] sm:h-[calc((100vh-104px)*0.4)] lg:w-2/5 lg:h-full"
+        class="object-cover w-full h-[calc(var(--not-bars-h-def)*0.4)] sm:h-[calc(var(--not-bars-h-sm)*0.4)] lg:w-2/5 lg:h-full"
         src="/map-placeholder.png"
         alt="placeholder for map component"
       />
