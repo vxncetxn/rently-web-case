@@ -11,6 +11,7 @@ import MagnifyingGlassIcon from "~/assets/icons/magnifying-glass.svg";
       class="w-full font-sans text-black text-20 capsize focus:outline-none"
       placeholder="Search location, house type, etc."
     />
+    <SecondaryButton>Inventory</SecondaryButton>
     <PrimaryButton>Search</PrimaryButton>
   </div>
 </template>
