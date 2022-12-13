@@ -2,7 +2,7 @@
 
 <template>
   <button
-    class="p-16 font-sans text-white bg-black text-20 capsize rounded-8 hover:bg-teal-800"
+    class="px-16 py-8 font-sans text-white bg-black text-16 capsize rounded-4 hover:bg-teal-800 sm:text-18 lg:text-20 sm:py-12 lg:py-16 sm:rounded-8"
   >
     <slot></slot>
   </button>

@@ -9,11 +9,11 @@ const closeHandler = () => (isOpen.value = false);
 
 <template>
   <div
-    class="flex items-center gap-x-24 sticky top-80 z-10 w-screen h-64 border-b border-[#EBEBEB] px-64 bg-white focus-within:shadow-lg"
+    class="flex items-center gap-x-16 sticky top-48 z-10 w-screen h-40 border-b border-[#EBEBEB] px-16 bg-white focus-within:shadow-lg sm:gap-x-20 lg:gap-x-24 sm:h-48 lg:h-64 sm:top-64 lg:top-80 sm:px-40 lg:px-64"
   >
-    <MagnifyingGlassIcon class="w-24 h-24" />
+    <MagnifyingGlassIcon class="w-24 h-24 shrink-0" />
     <input
-      class="w-full font-sans text-black text-20 capsize focus:outline-none"
+      class="w-full font-sans text-black text-16 capsize focus:outline-none sm:text-18 lg:text-20"
       placeholder="Search location, house type, etc."
     />
     <SecondaryButton @click="openHandler">Inventory</SecondaryButton>

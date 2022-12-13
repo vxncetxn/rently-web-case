@@ -73,6 +73,10 @@ module.exports = {
       16: "1rem",
       full: "50%",
     },
+    screens: {
+      sm: "640px",
+      lg: "1034px",
+    },
   },
   plugins: [require("tailwindcss-capsize")],
 };

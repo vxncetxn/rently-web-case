@@ -33,10 +33,10 @@ const title = computed(() => {
 </script>
 
 <template>
-  <div class="px-32 py-16 bg-white hover:bg-teal-50">
-    <div class="flex gap-x-32">
+  <div class="px-8 py-16 bg-white sm:px-20 lg:px-32 hover:bg-teal-50">
+    <div class="flex flex-col gap-32 sm:flex-row">
       <img
-        class="w-[240px] aspect-[3/2] rounded-8"
+        class="w-full sm:w-2/5 aspect-[3/2] rounded-8"
         :src="`/mock-images/${apartment.image}.webp`"
         :alt="`Cover image for ${title}`"
       />
@@ -51,7 +51,7 @@ const title = computed(() => {
             apartment.address.postalCode
           }})</Text
         >
-        <div class="flex mt-auto gap-x-8">
+        <div class="flex flex-wrap mt-24 sm:mt-auto gap-x-8 gap-y-12">
           <Text size="sm" color="grey">{{
             apartment.isWholeApt ? "Whole Apt" : "Single Room"
           }}</Text>
