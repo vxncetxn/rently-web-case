@@ -62,10 +62,49 @@ const fullAddress = computed(() => {
         </div>
         <Divider />
         <HeaderTwo>Inventory</HeaderTwo>
+        <InventoryView :inventory="property.items" />
       </div>
       <div
-        class="sticky top-[calc(var(--bars-h-lg)+32px)] w-2/5 bg-neutral-100 h-[360px] rounded-4"
-      ></div>
+        class="flex flex-col sticky top-[calc(var(--bars-h-lg)+32px)] w-2/5 bg-neutral-50 h-[calc(100vh-var(--bars-h-lg)-64px)] rounded-4 border border-neutral-200 p-40"
+      >
+        <div class="flex items-end gap-x-12">
+          <p class="font-serif text-48 capsize">$2178</p>
+          <Text size="lg" color="grey">per month*</Text>
+        </div>
+        <ul class="flex flex-col mt-32 gap-y-20">
+          <li class="flex items-center gap-x-12">
+            <span class="w-8 h-8 bg-black"></span>
+            <Text>Lease term of <span class="underline">2 years</span></Text>
+          </li>
+          <li class="flex items-center gap-x-12">
+            <span class="w-8 h-8 bg-black"></span>
+            <Text
+              >Security deposit of <span class="underline">2 months</span></Text
+            >
+          </li>
+          <li class="flex items-center gap-x-12">
+            <span class="w-8 h-8 bg-black"></span>
+            <Text
+              >Diplomatic clause with notice period of
+              <span class="underline">60 days</span></Text
+            >
+          </li>
+          <li class="flex items-center gap-x-12">
+            <span class="w-8 h-8 bg-black"></span>
+            <Text
+              >Maintenance included, liable
+              <span class="underline">up till $150</span></Text
+            >
+          </li>
+        </ul>
+        <div class="flex flex-col items-end mt-auto text-right gap-y-20">
+          <PrimaryButton>Make enquiry</PrimaryButton
+          ><Text size="sm" color="grey"
+            >Listed fee is before any additional charges such as utilities and
+            stamp fees*</Text
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
