@@ -1,7 +1,3 @@
-<script setup>
-import RentlyLogomark from "~/assets/rently-logomark.svg";
-</script>
-
 <template>
   <nav
     class="sticky top-0 z-20 w-screen h-[var(--navbar-h-def)] border-b border-neutral-200 grid grid-cols-3 items-center px-16 bg-white sm:h-[var(--navbar-h-sm)] lg:h-[var(--navbar-h-lg)] sm:px-40 lg:px-64"
@@ -17,7 +13,9 @@ import RentlyLogomark from "~/assets/rently-logomark.svg";
       </li>
     </ul>
     <div class="justify-self-center">
-      <RentlyLogomark class="w-24 sm:w-32 lg:w-40" />
+      <svg class="w-24 h-24 sm:w-32 lg:w-40 sm:h-32 lg:h-40">
+        <use href="#rently-logomark" />
+      </svg>
     </div>
     <div class="justify-self-end">
       <CustomLink to="/">Login</CustomLink>

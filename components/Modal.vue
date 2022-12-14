@@ -1,6 +1,5 @@
 <script setup>
 import { bool, func, string } from "vue-types";
-import XMarkIcon from "~/assets/icons/x-mark.svg";
 
 defineProps({
   isOpen: bool().isRequired,
@@ -31,7 +30,9 @@ defineProps({
             class="flex items-center justify-center w-48 h-48"
             @click="closeHandler"
           >
-            <XMarkIcon class="w-24 h-24" />
+            <svg class="w-24 h-24">
+              <use href="#x-mark-icon" />
+            </svg>
           </button>
         </div>
         <div class="px-40 py-32">
