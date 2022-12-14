@@ -35,6 +35,9 @@ const title = computed(() => {
     ? `${props.apartment.numRooms}-Room ${props.apartment.propertyType} at ${props.apartment.address.locale}`
     : `Room within ${props.apartment.propertyType} at ${props.apartment.address.locale}`;
 });
+const fullAddress = computed(() => {
+  return `${props.apartment.address.block} ${props.apartment.address.street} #${props.apartment.address.floor}-${props.apartment.address.unit}, S(${props.apartment.address.postalCode})`;
+});
 </script>
 
 <template>
@@ -49,13 +52,7 @@ const title = computed(() => {
         <HeaderThree>
           {{ title }}
         </HeaderThree>
-        <Text size="sm" color="grey"
-          >{{ apartment.address.block }} {{ apartment.address.street }} #{{
-            apartment.address.floor
-          }}-{{ apartment.address.unit }}, S({{
-            apartment.address.postalCode
-          }})</Text
-        >
+        <Text size="sm" color="grey">{{ fullAddress }}</Text>
         <div class="flex flex-wrap mt-24 sm:mt-auto gap-x-8 gap-y-12">
           <Text size="sm" color="grey">{{
             apartment.isWholeHouse ? "Whole House" : "Single Room"
