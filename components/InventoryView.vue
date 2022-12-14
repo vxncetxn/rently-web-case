@@ -59,9 +59,7 @@ const closeHandler = () => (isOpen.value = false);
         v-else
       >
         <svg class="w-24 h-24">
-          <use
-            :href="`#${item.name.replaceAll(' ', '-').toLowerCase()}-icon`"
-          />
+          <use :href="`#${item.name.replace(/ /g, '-').toLowerCase()}-icon`" />
         </svg>
         <Text>{{ item.name }}</Text>
       </div>
@@ -98,9 +96,7 @@ const closeHandler = () => (isOpen.value = false);
             >
               <svg class="w-24 h-24">
                 <use
-                  :href="`#${item.name
-                    .replaceAll(' ', '-')
-                    .toLowerCase()}-icon`"
+                  :href="`#${item.name.replace(/ /g, '-').toLowerCase()}-icon`"
                 />
               </svg>
               <Text>{{ item.name }}</Text>
