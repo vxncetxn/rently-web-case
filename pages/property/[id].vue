@@ -34,9 +34,12 @@ const fullAddress = computed(() => {
           :alt="`Cover image for ${title}`"
         />
         <div class="flex gap-x-24">
-          <Avatar src="avatar-1.jpg" alt="" />
+          <Avatar
+            :src="property.owner.image"
+            :alt="`Profile image of ${property.owner.name}`"
+          />
           <div class="flex flex-col gap-y-16">
-            <Text size="lg">Owned by Janice Koh</Text>
+            <Text size="lg">Owned by {{ property.owner.name }}</Text>
             <div class="flex flex-wrap gap-x-8 gap-y-12">
               <Text color="grey">{{
                 property.isWholeHouse ? "Whole House" : "Single Room"
@@ -58,6 +61,7 @@ const fullAddress = computed(() => {
           </div>
         </div>
         <Divider />
+        <HeaderTwo>Inventory</HeaderTwo>
       </div>
       <div
         class="sticky top-[calc(var(--bars-h-lg)+32px)] w-2/5 bg-neutral-100 h-[360px] rounded-4"

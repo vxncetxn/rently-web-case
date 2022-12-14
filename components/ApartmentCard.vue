@@ -6,6 +6,10 @@ const props = defineProps({
   apartment: shape({
     id: integer(),
     image: string(),
+    owner: shape({
+      name: string(),
+      image: string(),
+    }),
     isWholeHouse: bool(),
     propertyType: oneOf(["HDB", "Condo", "Landed"]),
     numRooms: integer(),
@@ -23,8 +27,17 @@ const props = defineProps({
     },
     items: arrayOf(
       shape({
-        type: string(),
+        name: string(),
         image: string(),
+        type: oneOf([
+          "Bathroom & Laundry",
+          "Bedroom",
+          "Kitchen",
+          "Entertainment & Internet",
+          "Heating",
+          "House Safety",
+        ]),
+        quantity: integer(),
       })
     ),
   }).isRequired,

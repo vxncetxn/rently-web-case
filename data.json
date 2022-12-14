@@ -2,6 +2,10 @@
   {
     "id": 1016153,
     "image": "apartment-1",
+    "owner": {
+      "name": "Janice Koh",
+      "image": "avatar-1.jpg"
+    },
     "isWholeHouse": true,
     "propertyType": "HDB",
     "numRooms": 4,
@@ -19,86 +23,128 @@
     },
     "items": [
       {
-        "type": "Bathtub",
-        "image": "bathtub.jpg"
+        "name": "Bathtub",
+        "image": "bathtub.jpg",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
       },
       {
-        "type": "Bidet",
-        "image": "bidet.jpg"
+        "name": "Bidet",
+        "image": "bidet.jpg",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
       },
       {
-        "type": "Washing Machine",
-        "image": "washing-machine.jpg"
+        "name": "Washing Machine",
+        "image": "washing-machine.jpg",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
       },
       {
-        "type": "TV",
-        "image": "tv.jpg"
+        "name": "TV",
+        "image": "tv.jpg",
+        "type": "Entertainment & Internet",
+        "quantity": 1
       },
       {
-        "type": "Wifi",
-        "image": ""
+        "name": "Wifi",
+        "image": "",
+        "type": "Entertainment & Internet",
+        "quantity": 1
       },
       {
-        "type": "Refrigerator",
-        "image": "refrigerator.jpg"
+        "name": "Refrigerator",
+        "image": "refrigerator.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Toaster",
-        "image": "toaster.jpg"
+        "name": "Toaster",
+        "image": "toaster.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Coffee Maker",
-        "image": "coffee-maker.jpg"
+        "name": "Coffee Maker",
+        "image": "coffee-maker.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Kettle",
-        "image": "kettle.jpg"
+        "name": "Kettle",
+        "image": "kettle.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Dining Table",
-        "image": "dining-table.jpg"
+        "name": "Dining Table",
+        "image": "dining-table.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Oven",
-        "image": "oven.jpg"
+        "name": "Oven",
+        "image": "oven.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Aircon",
-        "image": ""
+        "name": "Aircon",
+        "image": "",
+        "type": "Heating",
+        "quantity": 1
       },
       {
-        "type": "Ceiling Fan",
-        "image": "ceiling-fan.jpg"
+        "name": "Ceiling Fan",
+        "image": "ceiling-fan.jpg",
+        "type": "Heating",
+        "quantity": 3
       },
       {
-        "type": "First Aid Kit",
-        "image": ""
+        "name": "First Aid Kit",
+        "image": "",
+        "type": "House Safety",
+        "quantity": 1
       },
       {
-        "type": "Fire Extinguisher",
-        "image": ""
+        "name": "Fire Extinguisher",
+        "image": "",
+        "type": "House Safety",
+        "quantity": 1
       },
       {
-        "type": "Iron",
-        "image": ""
+        "name": "Iron",
+        "image": "",
+        "type": "Bedroom",
+        "quantity": 2
       },
       {
-        "type": "Safe",
-        "image": ""
+        "name": "Safe",
+        "image": "",
+        "type": "Bedroom",
+        "quantity": 1
       },
       {
-        "type": "Wardrobe",
-        "image": ""
+        "name": "Wardrobe",
+        "image": "",
+        "type": "Bedroom",
+        "quantity": 2
       },
       {
-        "type": "Work Desk",
-        "image": ""
+        "name": "Work Desk",
+        "image": "",
+        "type": "Bedroom",
+        "quantity": 2
       }
     ]
   },
   {
     "id": 29248487,
     "image": "apartment-2",
+    "owner": {
+      "name": "Serene Lim",
+      "image": "avatar-2.jpg"
+    },
     "isWholeHouse": false,
     "propertyType": "Condo",
     "numRooms": 1,
@@ -116,46 +162,68 @@
     },
     "items": [
       {
-        "type": "Shower",
-        "image": ""
+        "name": "Shower",
+        "image": "",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
       },
       {
-        "type": "Hairdryer",
-        "image": ""
+        "name": "Hairdryer",
+        "image": "",
+        "type": "Bathroom & Laundry",
+        "quantity": 2
       },
       {
-        "type": "Washing Machine",
-        "image": "washing-machine.jpg"
+        "name": "Washing Machine",
+        "image": "washing-machine.jpg",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
       },
       {
-        "type": "TV",
-        "image": "tv.jpg"
+        "name": "TV",
+        "image": "tv.jpg",
+        "type": "Entertainment & Internet",
+        "quantity": 1
       },
       {
-        "type": "Wifi",
-        "image": ""
+        "name": "Wifi",
+        "image": "",
+        "type": "Entertainment & Internet",
+        "quantity": 1
       },
       {
-        "type": "Refrigerator",
-        "image": "refrigerator.jpg"
+        "name": "Refrigerator",
+        "image": "refrigerator.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Dining Table",
-        "image": "dining-table.jpg"
+        "name": "Dining Table",
+        "image": "dining-table.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Microwave",
-        "image": ""
+        "name": "Microwave",
+        "image": "",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Aircon",
-        "image": ""
+        "name": "Aircon",
+        "image": "",
+        "type": "Heating",
+        "quantity": 1
       }
     ]
   },
   {
     "id": 24231713,
     "image": "apartment-3",
+    "owner": {
+      "name": "Chris Quek",
+      "image": "avatar-3.jpg"
+    },
     "isWholeHouse": true,
     "propertyType": "HDB",
     "numRooms": 4,
@@ -173,70 +241,104 @@
     },
     "items": [
       {
-        "type": "Shower",
-        "image": ""
+        "name": "Shower",
+        "image": "",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
       },
       {
-        "type": "Hairdryer",
-        "image": ""
+        "name": "Hairdryer",
+        "image": "",
+        "type": "Bathroom & Laundry",
+        "quantity": 2
       },
       {
-        "type": "Washing Machine",
-        "image": ""
+        "name": "Washing Machine",
+        "image": "",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
       },
       {
-        "type": "TV",
-        "image": "tv.jpg"
+        "name": "TV",
+        "image": "tv.jpg",
+        "type": "Entertainment & Internet",
+        "quantity": 2
       },
       {
-        "type": "Wifi",
-        "image": ""
+        "name": "Wifi",
+        "image": "",
+        "type": "Entertainment & Internet",
+        "quantity": 1
       },
       {
-        "type": "Refrigerator",
-        "image": ""
+        "name": "Refrigerator",
+        "image": "",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Dining Table",
-        "image": ""
+        "name": "Dining Table",
+        "image": "",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Microwave",
-        "image": "microwave.jpg"
+        "name": "Microwave",
+        "image": "microwave.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Oven",
-        "image": "oven.jpg"
+        "name": "Oven",
+        "image": "oven.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       },
       {
-        "type": "Aircon",
-        "image": ""
+        "name": "Aircon",
+        "image": "",
+        "type": "Heating",
+        "quantity": 1
       },
       {
-        "type": "Wardrobe",
-        "image": "wardrobe.jpg"
+        "name": "Wardrobe",
+        "image": "wardrobe.jpg",
+        "type": "Bedroom",
+        "quantity": 1
       },
       {
-        "type": "Baby Cot",
-        "image": "baby-cot"
+        "name": "Baby Cot",
+        "image": "baby-cot",
+        "type": "Bedroom",
+        "quantity": 1
       },
       {
-        "type": "Work Desk",
-        "image": "work-desk.jpg"
+        "name": "Work Desk",
+        "image": "work-desk.jpg",
+        "type": "Bedroom",
+        "quantity": 2
       },
       {
-        "type": "Smoke Alarm",
-        "image": ""
+        "name": "Smoke Alarm",
+        "image": "",
+        "type": "House Safety",
+        "quantity": 1
       },
       {
-        "type": "Dishwasher",
-        "image": "dishwasher.jpg"
+        "name": "Dishwasher",
+        "image": "dishwasher.jpg",
+        "type": "Kitchen",
+        "quantity": 1
       }
     ]
   },
   {
     "id": 20471860,
     "image": "apartment-4",
+    "owner": {
+      "name": "Gale Tan",
+      "image": "avatar-4.jpg"
+    },
     "isWholeHouse": true,
     "propertyType": "HDB",
     "numRooms": 5,
