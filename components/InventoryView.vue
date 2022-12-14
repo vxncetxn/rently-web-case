@@ -40,6 +40,10 @@ props.inventory
   .forEach((i) => {
     sectionedInventory[i.type].push({ ...i });
   });
+
+const isOpen = ref(false);
+const openHandler = () => (isOpen.value = true);
+const closeHandler = () => (isOpen.value = false);
 </script>
 
 <template>
@@ -61,8 +65,42 @@ props.inventory
     </div>
   </div>
   <div class="flex flex-col items-center">
-    <SecondaryButton>View all {{ inventory.length }} items</SecondaryButton>
+    <SecondaryButton @click="openHandler"
+      >View all {{ inventory.length }} items</SecondaryButton
+    >
   </div>
+  <Modal :isOpen="isOpen" :close-handler="closeHandler" title="Inventory">
+    <div class="flex flex-col gap-y-40">
+      <div
+        class="flex flex-col gap-y-24"
+        v-for="[section, items] in Object.entries(sectionedInventory).filter(
+          ([_, items]) => items.length
+        )"
+        :key="section"
+      >
+        <h4 class="font-sans text-black text-18 sm:text-20 capsize lg:text-24">
+          {{ section }}
+        </h4>
+        <div class="grid grid-cols-2 gap-12">
+          <div v-for="item in items" :key="item.name">
+            <img
+              class="w-full aspect-[3/2] object-cover"
+              v-if="item.image"
+              :src="`/mock-images/${item.image}`"
+              alt=""
+            />
+            <div
+              class="flex flex-col justify-center items-center gap-y-16 w-full aspect-[3/2] bg-neutral-50 border border-neutral-200"
+              v-else
+            >
+              <HairdryerIcon class="w-24" />
+              <Text>{{ item.name }}</Text>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Modal>
 
   <!-- <div class="relative flex flex-col gap-y-40 max-h-[720px] overflow-hidden">
     <div
