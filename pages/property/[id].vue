@@ -69,32 +69,47 @@ const fullAddress = computed(() => {
           class="flex flex-col gap-y-40 mt-96 lg:mt-0 sticky top-[calc(var(--bars-h-lg)+32px)] w-full lg:w-2/5 bg-neutral-50 h-[calc(100vh-var(--bars-h-lg)-64px)] rounded-4 border border-neutral-200 px-24 sm:px-32 lg:px-40 py-32"
         >
           <div class="flex items-end gap-x-12">
-            <p class="font-serif text-40 lg:text-48 capsize">$2178</p>
+            <p class="font-serif text-40 lg:text-48 capsize">
+              ${{ property.terms.price }}
+            </p>
             <Text size="lg" color="grey">per month*</Text>
           </div>
           <ul class="flex flex-col gap-y-24">
             <BulletListItem
               ><Text
-                >Lease term of <span class="underline">2 years</span></Text
+                >Lease term of
+                <span class="underline"
+                  >{{ property.terms.period }} months</span
+                ></Text
               ></BulletListItem
             >
             <BulletListItem
               ><Text
                 >Security deposit of
-                <span class="underline">2 months</span></Text
+                <span class="underline"
+                  >{{ property.terms.deposit }} months</span
+                ></Text
               ></BulletListItem
             >
-            <BulletListItem
-              ><Text
+            <BulletListItem>
+              <Text v-if="property.terms.dipClause.isPresent"
                 >Diplomatic clause with notice period of
-                <span class="underline">60 days</span></Text
-              ></BulletListItem
-            >
+                <span class="underline"
+                  >{{ property.terms.dipClause.noticePeriod }} months</span
+                ></Text
+              >
+              <Text v-else>No diplomatic clause</Text>
+            </BulletListItem>
             <BulletListItem
-              ><Text
-                >Maintenance included, liable
-                <span class="underline">up till $150</span></Text
-              ></BulletListItem
+              ><Text v-if="property.terms.maintenance.isIncluded"
+                >Maintenance included,
+                <span v-if="property.terms.maintenance.liability > 0"
+                  >liable
+                  <span class="underline"
+                    >up till ${{ property.terms.maintenance.liability }}</span
+                  ></span
+                ><span v-else>no additional charges</span></Text
+              ><Text v-else>Maintenance not included</Text></BulletListItem
             >
           </ul>
           <div class="flex flex-col items-end mt-auto text-right gap-y-20">

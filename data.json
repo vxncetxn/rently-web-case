@@ -6,6 +6,19 @@
       "name": "Janice Koh",
       "image": "avatar-1.jpg"
     },
+    "terms": {
+      "price": 6200,
+      "period": 12,
+      "deposit": 1,
+      "dipClause": {
+        "isPresent": true,
+        "noticePeriod": 6
+      },
+      "maintenance": {
+        "isIncluded": true,
+        "liability": 0
+      }
+    },
     "isWholeHouse": true,
     "propertyType": "HDB",
     "numRooms": 4,
@@ -145,6 +158,19 @@
       "name": "Serene Lim",
       "image": "avatar-2.jpg"
     },
+    "terms": {
+      "price": 2178,
+      "period": 24,
+      "deposit": 2,
+      "dipClause": {
+        "isPresent": true,
+        "noticePeriod": 6
+      },
+      "maintenance": {
+        "isIncluded": true,
+        "liability": 150
+      }
+    },
     "isWholeHouse": false,
     "propertyType": "Condo",
     "numRooms": 1,
@@ -223,6 +249,19 @@
     "owner": {
       "name": "Chris Quek",
       "image": "avatar-3.jpg"
+    },
+    "terms": {
+      "price": 4360,
+      "period": 12,
+      "deposit": 2,
+      "dipClause": {
+        "isPresent": false,
+        "noticePeriod": 0
+      },
+      "maintenance": {
+        "isIncluded": true,
+        "liability": 300
+      }
     },
     "isWholeHouse": true,
     "propertyType": "HDB",
@@ -338,6 +377,19 @@
     "owner": {
       "name": "Gale Tan",
       "image": "avatar-4.jpg"
+    },
+    "terms": {
+      "price": 4800,
+      "period": 18,
+      "deposit": 2,
+      "dipClause": {
+        "isPresent": true,
+        "noticePeriod": 6
+      },
+      "maintenance": {
+        "isIncluded": true,
+        "liability": 0
+      }
     },
     "isWholeHouse": true,
     "propertyType": "HDB",

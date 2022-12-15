@@ -10,6 +10,19 @@ const props = defineProps({
       name: string(),
       image: string(),
     }),
+    terms: shape({
+      price: integer(),
+      period: integer(),
+      deposit: integer(),
+      dipClause: {
+        isPresent: bool(),
+        noticePeriod: integer(),
+      },
+      maintenance: {
+        isIncluded: bool(),
+        liability: integer(),
+      },
+    }),
     isWholeHouse: bool(),
     propertyType: oneOf(["HDB", "Condo", "Landed"]),
     numRooms: integer(),
