@@ -24,7 +24,7 @@ defineProps({
           v-if="isOpen"
         >
           <div
-            class="sticky top-0 left-0 flex items-center justify-between w-full px-40 py-16 bg-white"
+            class="sticky top-0 left-0 z-10 flex items-center justify-between w-full px-40 py-16 bg-white"
           >
             <HeaderThree>{{ title }}</HeaderThree>
             <button

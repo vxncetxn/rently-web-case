@@ -47,21 +47,12 @@ const closeHandler = () => (isOpen.value = false);
 <template>
   <div class="grid grid-cols-2 gap-12">
     <div v-for="item in sortedInventory.slice(0, 6)" :key="item.name">
-      <img
-        class="w-full aspect-[3/2] object-cover"
+      <InventoryItemImgCard
         v-if="item.image"
-        :src="`/mock-images/${item.image}`"
-        alt=""
+        :name="item.name"
+        :image="item.image"
       />
-      <div
-        class="flex flex-col justify-center items-center gap-y-16 w-full aspect-[3/2] bg-neutral-50 border border-neutral-200"
-        v-else
-      >
-        <svg class="w-24 h-24">
-          <use :href="`#${item.name.replace(/ /g, '-').toLowerCase()}-icon`" />
-        </svg>
-        <Text>{{ item.name }}</Text>
-      </div>
+      <InventoryItemDefCard v-else :name="item.name" />
     </div>
   </div>
   <div class="flex flex-col items-center">
@@ -70,7 +61,7 @@ const closeHandler = () => (isOpen.value = false);
     >
   </div>
   <Modal :isOpen="isOpen" :close-handler="closeHandler" title="Inventory">
-    <div class="flex flex-col gap-y-40">
+    <div class="flex flex-col gap-y-48">
       <div
         class="flex flex-col gap-y-24"
         v-for="[section, items] in Object.entries(sectionedInventory).filter(
@@ -78,28 +69,17 @@ const closeHandler = () => (isOpen.value = false);
         )"
         :key="section"
       >
-        <h4 class="font-sans text-black text-18 sm:text-20 capsize lg:text-24">
+        <Text size="lg">
           {{ section }}
-        </h4>
+        </Text>
         <div class="grid grid-cols-2 gap-12">
           <div v-for="item in items" :key="item.name">
-            <img
-              class="w-full aspect-[3/2] object-cover"
+            <InventoryItemImgCard
               v-if="item.image"
-              :src="`/mock-images/${item.image}`"
-              alt=""
+              :name="item.name"
+              :image="item.image"
             />
-            <div
-              class="flex flex-col justify-center items-center gap-y-16 w-full aspect-[3/2] bg-neutral-50 border border-neutral-200"
-              v-else
-            >
-              <svg class="w-24 h-24">
-                <use
-                  :href="`#${item.name.replace(/ /g, '-').toLowerCase()}-icon`"
-                />
-              </svg>
-              <Text>{{ item.name }}</Text>
-            </div>
+            <InventoryItemDefCard v-else :name="item.name" />
           </div>
         </div>
       </div>
