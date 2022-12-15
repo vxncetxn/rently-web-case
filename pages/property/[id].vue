@@ -26,8 +26,8 @@ const fullAddress = computed(() => {
   <div class="flex flex-col px-16 py-48 gap-y-24 sm:px-40 lg:px-64">
     <HeaderOne>{{ title }}</HeaderOne>
     <Text size="lg" color="grey">{{ fullAddress }}</Text>
-    <div class="flex mt-40 gap-x-32">
-      <div class="flex flex-col w-3/5 gap-y-48">
+    <div class="flex flex-col mt-40 lg:flex-row gap-x-32">
+      <div class="flex flex-col w-full lg:w-3/5 gap-y-48">
         <img
           class="object-cover w-full rounded-4"
           :src="`/mock-images/${property.image}.webp`"
@@ -65,10 +65,10 @@ const fullAddress = computed(() => {
         <InventoryView :inventory="property.items" />
       </div>
       <div
-        class="flex flex-col gap-y-40 sticky top-[calc(var(--bars-h-lg)+32px)] w-2/5 bg-neutral-50 h-[calc(100vh-var(--bars-h-lg)-64px)] rounded-4 border border-neutral-200 px-40 py-32"
+        class="flex flex-col gap-y-40 mt-96 lg:mt-0 sticky top-[calc(var(--bars-h-lg)+32px)] w-full lg:w-2/5 bg-neutral-50 h-[calc(100vh-var(--bars-h-lg)-64px)] rounded-4 border border-neutral-200 px-24 sm:px-32 lg:px-40 py-32"
       >
         <div class="flex items-end gap-x-12">
-          <p class="font-serif text-48 capsize">$2178</p>
+          <p class="font-serif text-40 lg:text-48 capsize">$2178</p>
           <Text size="lg" color="grey">per month*</Text>
         </div>
         <ul class="flex flex-col gap-y-24">
@@ -84,7 +84,7 @@ const fullAddress = computed(() => {
           >
           <BulletListItem
             ><Text
-              >Diplomatic clause with extended notice period of
+              >Diplomatic clause with notice period of
               <span class="underline">60 days</span></Text
             ></BulletListItem
           >

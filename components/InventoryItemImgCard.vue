@@ -15,7 +15,7 @@ defineProps({
       :alt="name"
     />
     <div
-      class="absolute flex items-center p-4 font-sans bg-white gap-x-12 bottom-16 right-16 text-18 capsize rounded-8"
+      class="absolute flex items-center p-4 font-sans bg-white gap-x-12 bottom-16 right-16 text-14 sm:text-16 lg:text-18 capsize rounded-8"
     >
       <svg class="w-24 h-24">
         <use :href="`#${name.replace(/ /g, '-').toLowerCase()}-icon`" />

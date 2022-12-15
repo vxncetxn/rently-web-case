@@ -45,20 +45,22 @@ const closeHandler = () => (isOpen.value = false);
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-12">
-    <div v-for="item in sortedInventory.slice(0, 6)" :key="item.name">
-      <InventoryItemImgCard
-        v-if="item.image"
-        :name="item.name"
-        :image="item.image"
-      />
-      <InventoryItemDefCard v-else :name="item.name" />
+  <div class="flex flex-col gap-y-24">
+    <div class="grid grid-cols-2 gap-12">
+      <div v-for="item in sortedInventory.slice(0, 6)" :key="item.name">
+        <InventoryItemImgCard
+          v-if="item.image"
+          :name="item.name"
+          :image="item.image"
+        />
+        <InventoryItemDefCard v-else :name="item.name" />
+      </div>
     </div>
-  </div>
-  <div class="flex flex-col items-center">
-    <SecondaryButton @click="openHandler"
-      >View all {{ inventory.length }} items</SecondaryButton
-    >
+    <div class="flex flex-col items-center">
+      <SecondaryButton @click="openHandler"
+        >View all {{ inventory.length }} items</SecondaryButton
+      >
+    </div>
   </div>
   <Modal :isOpen="isOpen" :close-handler="closeHandler" title="Inventory">
     <div class="flex flex-col gap-y-48">
