@@ -1,15 +1,16 @@
 <script setup>
 import { computed } from "vue";
-import data from "~/data.json";
+import localData from "~/data.json";
 
 definePageMeta({
   validate: async (route) => {
-    return data.map((d) => d.id).includes(parseInt(route.params.id));
+    return localData.map((d) => d.id).includes(parseInt(route.params.id));
   },
 });
 
+const data = useData();
 const route = useRoute();
-const property = data.find((d) => d.id === parseInt(route.params.id));
+const property = data.value.find((d) => d.id === parseInt(route.params.id));
 
 const title = computed(() => {
   return property.isWholeHouse

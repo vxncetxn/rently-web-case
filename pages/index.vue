@@ -1,5 +1,5 @@
 <script setup>
-import data from "~/data.json";
+const data = useData();
 </script>
 
 <template>
