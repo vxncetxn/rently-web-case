@@ -30,7 +30,7 @@ const fullAddress = computed(() => {
       <div class="flex flex-col w-full lg:w-3/5 gap-y-48">
         <img
           class="object-cover w-full rounded-4"
-          :src="`/mock-images/${property.image}.webp`"
+          :src="`/mock-images/${property.image}`"
           :alt="`Cover image for ${title}`"
         />
         <div class="flex gap-x-24">

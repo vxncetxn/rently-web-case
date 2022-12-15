@@ -1,7 +1,7 @@
 [
   {
     "id": 1016153,
-    "image": "apartment-1",
+    "image": "property-1.webp",
     "owner": {
       "name": "Janice Koh",
       "image": "avatar-1.jpg"
@@ -140,7 +140,7 @@
   },
   {
     "id": 29248487,
-    "image": "apartment-2",
+    "image": "property-2.webp",
     "owner": {
       "name": "Serene Lim",
       "image": "avatar-2.jpg"
@@ -219,7 +219,7 @@
   },
   {
     "id": 24231713,
-    "image": "apartment-3",
+    "image": "property-3.webp",
     "owner": {
       "name": "Chris Quek",
       "image": "avatar-3.jpg"
@@ -334,7 +334,7 @@
   },
   {
     "id": 20471860,
-    "image": "apartment-4",
+    "image": "property-4.webp",
     "owner": {
       "name": "Gale Tan",
       "image": "avatar-4.jpg"
