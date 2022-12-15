@@ -27,18 +27,17 @@ const sectionedInventory = {
   Heating: [],
   "House Safety": [],
 };
+const sortedInventory = [...props.inventory].sort((a, b) => {
+  if (b.image && !a.image) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
 
-props.inventory
-  .sort((a, b) => {
-    if (b.image && !a.image) {
-      return 1;
-    } else {
-      return -1;
-    }
-  })
-  .forEach((i) => {
-    sectionedInventory[i.type].push({ ...i });
-  });
+sortedInventory.forEach((i) => {
+  sectionedInventory[i.type].push({ ...i });
+});
 
 const isOpen = ref(false);
 const openHandler = () => (isOpen.value = true);
@@ -47,7 +46,7 @@ const closeHandler = () => (isOpen.value = false);
 
 <template>
   <div class="grid grid-cols-2 gap-12">
-    <div v-for="item in inventory.slice(0, 6)" :key="item.name">
+    <div v-for="item in sortedInventory.slice(0, 6)" :key="item.name">
       <img
         class="w-full aspect-[3/2] object-cover"
         v-if="item.image"
