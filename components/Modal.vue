@@ -20,7 +20,7 @@ defineProps({
       ></Transition>
       <Transition name="modal-anim"
         ><div
-          class="fixed z-30 bg-white border border-neutral-200 w-[640px] max-h-[calc(100vh-128px)] rounded-8 bottom-64 right-64 overflow-y-scroll overscroll-none"
+          class="fixed z-30 bg-white border border-neutral-200 w-full sm:w-[calc(100%-80px)] lg:w-[45vw] lg:max-w-[680px] max-h-[90vh] sm:max-h-[calc(100vh-128px)] rounded-8 bottom-0 sm:bottom-64 right-0 sm:right-40 lg:right-64 overflow-y-scroll overscroll-none"
           v-if="isOpen"
         >
           <div

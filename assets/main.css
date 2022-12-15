@@ -52,7 +52,7 @@ html {
 
 .modal-anim-enter-from,
 .modal-anim-leave-to {
-  transform: translateX(calc(100% + 128px));
+  transform: translateY(calc(100%));
 }
 .modal-anim-enter-active,
 .modal-anim-leave-active {
@@ -60,5 +60,29 @@ html {
 }
 .modal-anim-enter-to,
 .modal-anim-leave-from {
-  transform: translateX(0);
+  transform: translateY(0);
+}
+
+@media (min-width: 640px) {
+  .modal-anim-enter-from,
+  .modal-anim-leave-to {
+    transform: translateX(calc(100% + 80px));
+  }
+
+  .modal-anim-enter-to,
+  .modal-anim-leave-from {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 1034px) {
+  .modal-anim-enter-from,
+  .modal-anim-leave-to {
+    transform: translateX(calc(100% + 128px));
+  }
+
+  .modal-anim-enter-to,
+  .modal-anim-leave-from {
+    transform: translateX(0);
+  }
 }
