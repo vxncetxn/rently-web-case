@@ -65,37 +65,35 @@ const fullAddress = computed(() => {
         <InventoryView :inventory="property.items" />
       </div>
       <div
-        class="flex flex-col sticky top-[calc(var(--bars-h-lg)+32px)] w-2/5 bg-neutral-50 h-[calc(100vh-var(--bars-h-lg)-64px)] rounded-4 border border-neutral-200 p-40"
+        class="flex flex-col gap-y-40 sticky top-[calc(var(--bars-h-lg)+32px)] w-2/5 bg-neutral-50 h-[calc(100vh-var(--bars-h-lg)-64px)] rounded-4 border border-neutral-200 px-40 py-32"
       >
         <div class="flex items-end gap-x-12">
           <p class="font-serif text-48 capsize">$2178</p>
           <Text size="lg" color="grey">per month*</Text>
         </div>
-        <ul class="flex flex-col mt-32 gap-y-20">
-          <li class="flex items-center gap-x-12">
-            <span class="w-8 h-8 bg-black"></span>
-            <Text>Lease term of <span class="underline">2 years</span></Text>
-          </li>
-          <li class="flex items-center gap-x-12">
-            <span class="w-8 h-8 bg-black"></span>
-            <Text
+        <ul class="flex flex-col gap-y-24">
+          <BulletListItem
+            ><Text
+              >Lease term of <span class="underline">2 years</span></Text
+            ></BulletListItem
+          >
+          <BulletListItem
+            ><Text
               >Security deposit of <span class="underline">2 months</span></Text
-            >
-          </li>
-          <li class="flex items-center gap-x-12">
-            <span class="w-8 h-8 bg-black"></span>
-            <Text
-              >Diplomatic clause with notice period of
+            ></BulletListItem
+          >
+          <BulletListItem
+            ><Text
+              >Diplomatic clause with extended notice period of
               <span class="underline">60 days</span></Text
-            >
-          </li>
-          <li class="flex items-center gap-x-12">
-            <span class="w-8 h-8 bg-black"></span>
-            <Text
+            ></BulletListItem
+          >
+          <BulletListItem
+            ><Text
               >Maintenance included, liable
               <span class="underline">up till $150</span></Text
-            >
-          </li>
+            ></BulletListItem
+          >
         </ul>
         <div class="flex flex-col items-end mt-auto text-right gap-y-20">
           <PrimaryButton>Make enquiry</PrimaryButton
