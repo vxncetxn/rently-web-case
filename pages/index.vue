@@ -1,5 +1,5 @@
 <script setup>
-import data from "../data.json";
+import data from "~/data.json";
 </script>
 
 <template>
@@ -18,11 +18,11 @@ import data from "../data.json";
       class="w-full lg:w-3/5 relative z-10 flex flex-col px-8 py-64 lg:py-32 sm:px-20 lg:px-32 -mt-[calc(var(--not-bars-h-def)*0.65)] sm:-mt-[calc(var(--not-bars-h-sm)*0.65)] lg:-mt-[var(--not-bars-h-lg)] bg-white rounded-t-32 max-w-5xl"
     >
       <div class="px-8 sm:px-20 lg:px-32">
-        <Text color="grey">Displaying {{ data.length }} apartments</Text>
+        <Text color="grey">Displaying {{ data.length }} properties</Text>
       </div>
       <ul class="flex flex-col mt-16 gap-y-16">
-        <li v-for="apartment in data" :key="apartment.id">
-          <ApartmentCard :apartment="apartment" />
+        <li v-for="property in data" :key="property.id">
+          <PropertyCard :property="property" />
         </li>
       </ul>
     </div>

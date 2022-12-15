@@ -1,40 +1,44 @@
 <script setup>
 import { bool, func, string } from "vue-types";
-import XMarkIcon from "~/assets/icons/x-mark.svg";
 
 defineProps({
-  isOpen: bool().def(false).isRequired,
+  isOpen: bool().isRequired,
   closeHandler: func().isRequired,
   title: string().isRequired,
 });
 </script>
 
 <template>
-  <Teleport to="#portal">
-    <Transition name="overlay-anim"
-      ><div
-        class="fixed top-0 left-0 z-30 flex justify-end w-screen h-screen p-64 bg-black/50"
-        v-if="isOpen"
-        @click="closeHandler"
-      ></div
-    ></Transition>
-    <Transition name="modal-anim"
-      ><div
-        class="fixed z-30 bg-white border border-neutral-200 w-[480px] max-h-[calc(100vh-128px)] rounded-8 bottom-64 right-64 px-40 py-32 overflow-y-scroll"
-        v-if="isOpen"
-      >
-        <div class="flex items-center justify-between">
-          <HeaderThree>{{ title }}</HeaderThree>
-          <button
-            class="flex items-center justify-center w-48 h-48"
-            @click="closeHandler"
+  <ClientOnly
+    ><Teleport to="#portal">
+      <Transition name="overlay-anim"
+        ><div
+          class="fixed top-0 left-0 z-30 flex justify-end w-screen h-screen p-64 bg-black/50"
+          v-if="isOpen"
+          @click="closeHandler"
+        ></div
+      ></Transition>
+      <Transition name="modal-anim"
+        ><div
+          class="fixed z-30 bg-white border border-neutral-200 w-full sm:w-[calc(100%-80px)] lg:w-[45vw] lg:max-w-[680px] max-h-[90vh] sm:max-h-[calc(100vh-128px)] rounded-8 bottom-0 sm:bottom-64 right-0 sm:right-40 lg:right-64 overflow-y-scroll overscroll-none"
+          v-if="isOpen"
+        >
+          <div
+            class="sticky top-0 left-0 z-10 flex items-center justify-between w-full px-40 py-16 bg-white"
           >
-            <XMarkIcon class="w-24 h-24" />
-          </button>
-        </div>
-        <div>
-          <slot></slot>
-        </div></div
-    ></Transition>
-  </Teleport>
+            <HeaderThree>{{ title }}</HeaderThree>
+            <button
+              class="flex items-center justify-center w-48 h-48"
+              @click="closeHandler"
+            >
+              <svg class="w-24 h-24">
+                <use href="#x-mark-icon" />
+              </svg>
+            </button>
+          </div>
+          <div class="px-40 py-32">
+            <slot></slot>
+          </div></div
+      ></Transition> </Teleport
+  ></ClientOnly>
 </template>

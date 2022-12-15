@@ -2,7 +2,7 @@
 import { string } from "vue-types";
 
 defineProps({
-  to: string(),
+  to: string().isRequired,
 });
 </script>
 

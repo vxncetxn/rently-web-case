@@ -1,8 +1,25 @@
 [
   {
     "id": 1016153,
-    "image": "apartment-1",
-    "isWholeApt": true,
+    "image": "property-1.webp",
+    "owner": {
+      "name": "Janice Koh",
+      "image": "avatar-1.jpg"
+    },
+    "terms": {
+      "price": 6200,
+      "period": 12,
+      "deposit": 1,
+      "dipClause": {
+        "isPresent": true,
+        "noticePeriod": 6
+      },
+      "maintenance": {
+        "isIncluded": true,
+        "liability": 0
+      }
+    },
+    "isWholeHouse": true,
     "propertyType": "HDB",
     "numRooms": 4,
     "address": {
@@ -17,12 +34,144 @@
       "sqft": 1001,
       "sqm": 93
     },
-    "items": 12
+    "items": [
+      {
+        "name": "Bathtub",
+        "image": "bathtub.jpg",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
+      },
+      {
+        "name": "Bidet",
+        "image": "bidet.jpg",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
+      },
+      {
+        "name": "Washing Machine",
+        "image": "washing-machine.jpg",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
+      },
+      {
+        "name": "TV",
+        "image": "tv.jpg",
+        "type": "Entertainment & Internet",
+        "quantity": 1
+      },
+      {
+        "name": "Wifi",
+        "image": "",
+        "type": "Entertainment & Internet",
+        "quantity": 1
+      },
+      {
+        "name": "Refrigerator",
+        "image": "refrigerator.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Toaster",
+        "image": "toaster.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Coffee Maker",
+        "image": "coffee-maker.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Kettle",
+        "image": "kettle.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Dining Table",
+        "image": "dining-table.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Oven",
+        "image": "oven.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Aircon",
+        "image": "",
+        "type": "Heating",
+        "quantity": 1
+      },
+      {
+        "name": "Ceiling Fan",
+        "image": "ceiling-fan.jpg",
+        "type": "Heating",
+        "quantity": 3
+      },
+      {
+        "name": "First Aid Kit",
+        "image": "",
+        "type": "House Safety",
+        "quantity": 1
+      },
+      {
+        "name": "Fire Extinguisher",
+        "image": "",
+        "type": "House Safety",
+        "quantity": 1
+      },
+      {
+        "name": "Iron",
+        "image": "",
+        "type": "Bedroom",
+        "quantity": 2
+      },
+      {
+        "name": "Safe",
+        "image": "",
+        "type": "Bedroom",
+        "quantity": 1
+      },
+      {
+        "name": "Wardrobe",
+        "image": "",
+        "type": "Bedroom",
+        "quantity": 2
+      },
+      {
+        "name": "Work Desk",
+        "image": "",
+        "type": "Bedroom",
+        "quantity": 2
+      }
+    ]
   },
   {
     "id": 29248487,
-    "image": "apartment-2",
-    "isWholeApt": false,
+    "image": "property-2.webp",
+    "owner": {
+      "name": "Serene Lim",
+      "image": "avatar-2.jpg"
+    },
+    "terms": {
+      "price": 2178,
+      "period": 24,
+      "deposit": 2,
+      "dipClause": {
+        "isPresent": true,
+        "noticePeriod": 6
+      },
+      "maintenance": {
+        "isIncluded": true,
+        "liability": 150
+      }
+    },
+    "isWholeHouse": false,
     "propertyType": "Condo",
     "numRooms": 1,
     "address": {
@@ -37,12 +186,84 @@
       "sqft": 215,
       "sqm": 20
     },
-    "items": 8
+    "items": [
+      {
+        "name": "Shower",
+        "image": "",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
+      },
+      {
+        "name": "Hairdryer",
+        "image": "",
+        "type": "Bathroom & Laundry",
+        "quantity": 2
+      },
+      {
+        "name": "Washing Machine",
+        "image": "washing-machine.jpg",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
+      },
+      {
+        "name": "TV",
+        "image": "tv.jpg",
+        "type": "Entertainment & Internet",
+        "quantity": 1
+      },
+      {
+        "name": "Wifi",
+        "image": "",
+        "type": "Entertainment & Internet",
+        "quantity": 1
+      },
+      {
+        "name": "Refrigerator",
+        "image": "refrigerator.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Dining Table",
+        "image": "dining-table.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Microwave",
+        "image": "",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Aircon",
+        "image": "",
+        "type": "Heating",
+        "quantity": 1
+      }
+    ]
   },
   {
     "id": 24231713,
-    "image": "apartment-3",
-    "isWholeApt": true,
+    "image": "property-3.webp",
+    "owner": {
+      "name": "Chris Quek",
+      "image": "avatar-3.jpg"
+    },
+    "terms": {
+      "price": 4360,
+      "period": 12,
+      "deposit": 2,
+      "dipClause": {
+        "isPresent": false,
+        "noticePeriod": 0
+      },
+      "maintenance": {
+        "isIncluded": true,
+        "liability": 300
+      }
+    },
+    "isWholeHouse": true,
     "propertyType": "HDB",
     "numRooms": 4,
     "address": {
@@ -57,12 +278,120 @@
       "sqft": 1205,
       "sqm": 112
     },
-    "items": 20
+    "items": [
+      {
+        "name": "Shower",
+        "image": "",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
+      },
+      {
+        "name": "Hairdryer",
+        "image": "",
+        "type": "Bathroom & Laundry",
+        "quantity": 2
+      },
+      {
+        "name": "Washing Machine",
+        "image": "",
+        "type": "Bathroom & Laundry",
+        "quantity": 1
+      },
+      {
+        "name": "TV",
+        "image": "tv.jpg",
+        "type": "Entertainment & Internet",
+        "quantity": 2
+      },
+      {
+        "name": "Wifi",
+        "image": "",
+        "type": "Entertainment & Internet",
+        "quantity": 1
+      },
+      {
+        "name": "Refrigerator",
+        "image": "",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Dining Table",
+        "image": "",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Microwave",
+        "image": "microwave.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Oven",
+        "image": "oven.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      },
+      {
+        "name": "Aircon",
+        "image": "",
+        "type": "Heating",
+        "quantity": 1
+      },
+      {
+        "name": "Wardrobe",
+        "image": "wardrobe.jpg",
+        "type": "Bedroom",
+        "quantity": 1
+      },
+      {
+        "name": "Baby Cot",
+        "image": "baby-cot.jpg",
+        "type": "Bedroom",
+        "quantity": 1
+      },
+      {
+        "name": "Work Desk",
+        "image": "work-desk.jpg",
+        "type": "Bedroom",
+        "quantity": 2
+      },
+      {
+        "name": "Smoke Alarm",
+        "image": "",
+        "type": "House Safety",
+        "quantity": 1
+      },
+      {
+        "name": "Dishwasher",
+        "image": "dishwasher.jpg",
+        "type": "Kitchen",
+        "quantity": 1
+      }
+    ]
   },
   {
     "id": 20471860,
-    "image": "apartment-4",
-    "isWholeApt": true,
+    "image": "property-4.webp",
+    "owner": {
+      "name": "Gale Tan",
+      "image": "avatar-4.jpg"
+    },
+    "terms": {
+      "price": 4800,
+      "period": 18,
+      "deposit": 2,
+      "dipClause": {
+        "isPresent": true,
+        "noticePeriod": 6
+      },
+      "maintenance": {
+        "isIncluded": true,
+        "liability": 0
+      }
+    },
+    "isWholeHouse": true,
     "propertyType": "HDB",
     "numRooms": 5,
     "address": {
@@ -77,6 +406,6 @@
       "sqft": 1260,
       "sqm": 117
     },
-    "items": 17
+    "items": []
   }
 ]

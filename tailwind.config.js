@@ -43,6 +43,7 @@ module.exports = {
       48: ["3rem", "1"],
     },
     spacing: {
+      px: "1px",
       0: "0",
       2: "0.125rem",
       4: "0.25rem",
