@@ -51,6 +51,7 @@ const closeHandler = () => (isOpen.value = false);
         <ClientOnly
           ><InventoryItemCard
             :name="item.name"
+            :quantity="item.quantity"
             :image="item.image ? item.image : ''"
         /></ClientOnly>
       </div>
@@ -77,6 +78,7 @@ const closeHandler = () => (isOpen.value = false);
           <div v-for="item in items" :key="item.name">
             <InventoryItemCard
               :name="item.name"
+              :quantity="item.quantity"
               :image="item.image ? item.image : ''"
             />
           </div>

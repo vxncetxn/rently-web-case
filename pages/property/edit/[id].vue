@@ -73,6 +73,7 @@ onBeforeRouteLeave((to, _, next) => {
             <div v-for="item in formState.items" :key="item.name">
               <InventoryItemCard
                 :name="item.name"
+                :quantity="item.quantity"
                 :image="item.image ? item.image : ''"
               />
             </div>

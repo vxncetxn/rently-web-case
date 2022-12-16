@@ -1,8 +1,9 @@
 <script setup>
-import { string } from "vue-types";
+import { string, integer } from "vue-types";
 
 defineProps({
   name: string().isRequired,
+  quantity: integer().isRequired,
   image: string(),
 });
 </script>
@@ -21,6 +22,7 @@ defineProps({
         <use :href="`#${name.replace(/ /g, '-').toLowerCase()}-icon`" />
       </svg>
       {{ name }}
+      x{{ quantity }}
     </div>
   </div>
   <div
@@ -30,6 +32,6 @@ defineProps({
     <svg class="w-24 h-24">
       <use :href="`#${name.replace(/ /g, '-').toLowerCase()}-icon`" />
     </svg>
-    <Text size="sm">{{ name }}</Text>
+    <Text size="sm">{{ name }} x{{ quantity }}</Text>
   </div>
 </template>
