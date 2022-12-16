@@ -8,11 +8,11 @@ definePageMeta({
   },
 });
 
-onBeforeRouteLeave((to, from, next) => {
-  alert("hi");
-  next();
-  return false;
-});
+// onBeforeRouteLeave((to, from, next) => {
+//   alert("hi");
+//   next();
+//   return false;
+// });
 
 const data = useData();
 const route = useRoute();
@@ -29,7 +29,24 @@ const closeHandler = () => (isOpen.value = false);
 </script>
 
 <template>
-  <SecondaryBar />
+  <SecondaryBar>
+    <div
+      class="flex items-center justify-between h-full gap-x-16 sm:gap-x-20 lg:gap-x-24"
+    >
+      <NuxtLink
+        class="flex items-center gap-x-16 sm:gap-x-20 lg:gap-x-24"
+        :to="`/property/${route.params.id}`"
+      >
+        <svg class="w-24 h-24 shrink-0">
+          <use href="#chevron-left-icon" />
+        </svg>
+        <Text color="grey">Back to listing</Text>
+      </NuxtLink>
+      <NuxtLink :to="`/property/preview/${route.params.id}`"
+        ><PrimaryButton>Preview edits</PrimaryButton></NuxtLink
+      >
+    </div>
+  </SecondaryBar>
   <Container
     ><div class="flex flex-col w-full px-16 py-48 gap-y-24 sm:px-40 lg:px-64">
       <HeaderOne>Edit Listing</HeaderOne>

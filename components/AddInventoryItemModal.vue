@@ -83,7 +83,6 @@ const submitHandler = (e) => {
         <ImageUpload
           name="image-field"
           label="Image"
-          :required="true"
           :modelValue="imageFileField"
           @upload="uploadHandler"
         />

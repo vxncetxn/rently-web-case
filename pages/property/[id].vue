@@ -23,7 +23,25 @@ const fullAddress = computed(() => {
 </script>
 
 <template>
-  <SecondaryBar />
+  <SecondaryBar>
+    <div
+      class="flex items-center justify-between h-full gap-x-16 sm:gap-x-20 lg:gap-x-24"
+    >
+      <NuxtLink
+        class="flex items-center gap-x-16 sm:gap-x-20 lg:gap-x-24"
+        to="/"
+      >
+        <svg class="w-24 h-24 shrink-0">
+          <use href="#chevron-left-icon" />
+        </svg>
+        <Text color="grey">Back to all listings</Text>
+      </NuxtLink>
+      <div class="flex gap-x-16 sm:gap-x-20 lg:gap-x-24">
+        <CustomLink :to="`/property/edit/${route.params.id}`">Edit</CustomLink>
+        <CustomLink to="">Share</CustomLink>
+      </div>
+    </div>
+  </SecondaryBar>
   <Container
     ><div class="flex flex-col px-16 py-48 gap-y-24 sm:px-40 lg:px-64">
       <HeaderOne>{{ title }}</HeaderOne>
