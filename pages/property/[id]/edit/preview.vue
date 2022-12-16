@@ -11,6 +11,9 @@ definePageMeta({
 const data = useData();
 const route = useRoute();
 const formState = useFormState();
+if (formState.value === null) {
+  navigateTo(`/property/${route.params.id}/edit`);
+}
 
 const sectionedInventory = {};
 itemsReference.forEach((i) => (sectionedInventory[i.name] = []));
