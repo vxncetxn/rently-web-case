@@ -48,12 +48,11 @@ const closeHandler = () => (isOpen.value = false);
   <div class="flex flex-col gap-y-24">
     <div class="grid grid-cols-2 gap-12">
       <div v-for="item in sortedInventory.slice(0, 6)" :key="item.name">
-        <InventoryItemImgCard
-          v-if="item.image"
-          :name="item.name"
-          :image="item.image"
-        />
-        <InventoryItemDefCard v-else :name="item.name" />
+        <ClientOnly
+          ><InventoryItemCard
+            :name="item.name"
+            :image="item.image ? item.image : ''"
+        /></ClientOnly>
       </div>
     </div>
     <div class="flex flex-col items-center">
@@ -76,12 +75,10 @@ const closeHandler = () => (isOpen.value = false);
         </Text>
         <div class="grid grid-cols-2 gap-12">
           <div v-for="item in items" :key="item.name">
-            <InventoryItemImgCard
-              v-if="item.image"
+            <InventoryItemCard
               :name="item.name"
-              :image="item.image"
+              :image="item.image ? item.image : ''"
             />
-            <InventoryItemDefCard v-else :name="item.name" />
           </div>
         </div>
       </div>

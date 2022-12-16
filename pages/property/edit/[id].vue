@@ -71,12 +71,10 @@ onBeforeRouteLeave((to, _, next) => {
         <div class="flex flex-col w-full lg:w-3/5 gap-y-48">
           <div class="grid grid-cols-2 gap-12">
             <div v-for="item in formState.items" :key="item.name">
-              <InventoryItemImgCard
-                v-if="item.image"
+              <InventoryItemCard
                 :name="item.name"
-                :image="item.image"
+                :image="item.image ? item.image : ''"
               />
-              <InventoryItemDefCard v-else :name="item.name" />
             </div>
           </div>
         </div>

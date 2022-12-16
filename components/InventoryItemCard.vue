@@ -3,12 +3,12 @@ import { string } from "vue-types";
 
 defineProps({
   name: string().isRequired,
-  image: string().isRequired,
+  image: string(),
 });
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative" v-if="image">
     <img
       class="w-full aspect-[3/2] object-cover"
       :src="`/mock-images/${image}`"
@@ -22,5 +22,14 @@ defineProps({
       </svg>
       {{ name }}
     </div>
+  </div>
+  <div
+    class="flex flex-col justify-center items-center gap-y-16 w-full aspect-[3/2] bg-neutral-50 border border-neutral-200"
+    v-else
+  >
+    <svg class="w-24 h-24">
+      <use :href="`#${name.replace(/ /g, '-').toLowerCase()}-icon`" />
+    </svg>
+    <Text size="sm">{{ name }}</Text>
   </div>
 </template>
