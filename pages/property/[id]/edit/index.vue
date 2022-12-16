@@ -68,7 +68,7 @@ onBeforeRouteLeave((to, _, next) => {
           <PrimaryButton @click="openHandler">Add inventory item</PrimaryButton>
         </div>
         <div class="flex flex-col w-full lg:w-3/5 gap-y-48">
-          <div class="grid grid-cols-2 gap-12">
+          <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
             <div v-for="item in formState.items" :key="item.name">
               <InventoryItemCard
                 :name="item.name"

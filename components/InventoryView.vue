@@ -46,7 +46,7 @@ const closeHandler = () => (isOpen.value = false);
 
 <template>
   <div class="flex flex-col gap-y-24">
-    <div class="grid grid-cols-2 gap-12">
+    <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
       <div v-for="item in sortedInventory.slice(0, 6)" :key="item.name">
         <ClientOnly
           ><InventoryItemCard
@@ -74,7 +74,7 @@ const closeHandler = () => (isOpen.value = false);
         <Text size="lg">
           {{ section }}
         </Text>
-        <div class="grid grid-cols-2 gap-12">
+        <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
           <div v-for="item in items" :key="item.name">
             <InventoryItemCard
               :name="item.name"
