@@ -70,31 +70,26 @@ const submitHandler = (e) => {
     title="Add Inventory Item"
     ><form ref="formRef">
       <div class="flex flex-col gap-y-32">
-        <div class="flex flex-col gap-y-16">
-          <label class="font-sans text-20 capsize" for="item-name">Item</label>
-          <select
-            class="px-16 py-12 font-sans border text-20 capsize bg-neutral-50 border-neutral-200 rounded-8"
-            name="item-name"
-            id="item-name"
-            required
-            v-model="itemField"
+        <Select
+          name="item-field"
+          label="Quantity"
+          :required="true"
+          v-model="itemField"
+          ><option value="">Choose an item</option>
+          <optgroup
+            v-for="group in itemTypes"
+            :key="group.name"
+            :label="group.name"
           >
-            <option value="">Choose an item</option>
-            <optgroup
-              v-for="group in itemTypes"
-              :key="group.name"
-              :label="group.name"
+            <option
+              v-for="item in group.items"
+              :key="item"
+              :disabled="formState.items.find((i) => i.name === item)"
             >
-              <option
-                v-for="item in group.items"
-                :key="item"
-                :disabled="formState.items.find((i) => i.name === item)"
-              >
-                {{ item }}
-              </option>
-            </optgroup>
-          </select>
-        </div>
+              {{ item }}
+            </option>
+          </optgroup></Select
+        >
         <NumberInput
           name="quantity-field"
           label="Quantity"

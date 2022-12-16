@@ -1,7 +1,7 @@
 <script setup>
 import { string, integer, bool } from "vue-types";
 
-const props = defineProps({
+defineProps({
   name: string().isRequired,
   label: string().isRequired,
   min: integer(),
