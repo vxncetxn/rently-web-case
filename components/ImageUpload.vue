@@ -7,7 +7,11 @@ const props = defineProps({
   label: string().isRequired,
   required: bool().def(false),
   modelValue: custom((value) => {
-    return value instanceof File;
+    if (value) {
+      return value instanceof File;
+    } else {
+      return value === null;
+    }
   }).isRequired,
 });
 

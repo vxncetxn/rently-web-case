@@ -53,7 +53,7 @@ const submitHandler = (e) => {
       <div class="flex flex-col gap-y-32">
         <Select
           name="item-field"
-          label="Quantity"
+          label="Item"
           :required="true"
           v-model="itemField"
           ><option value="">Choose an item</option>

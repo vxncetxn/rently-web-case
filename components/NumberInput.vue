@@ -14,7 +14,7 @@ defineProps({
 const emit = defineEmits(["update:modelValue"]);
 
 const inputHandler = (e) => {
-  emit("update:modelValue", e.target.value);
+  emit("update:modelValue", parseInt(e.target.value));
 };
 </script>
 

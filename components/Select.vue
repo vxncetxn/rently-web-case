@@ -17,9 +17,13 @@ const inputHandler = (e) => {
 
 <template>
   <div class="flex flex-col gap-y-16">
-    <label class="font-sans text-20 capsize" :for="name">{{ label }}</label>
+    <label
+      class="font-sans text-16 sm:text-18 lg:text-20 capsize"
+      :for="name"
+      >{{ label }}</label
+    >
     <select
-      class="px-16 py-12 font-sans border text-20 capsize bg-neutral-50 border-neutral-200 rounded-8"
+      class="px-16 py-12 font-sans border text-16 sm:text-18 lg:text-20 capsize bg-neutral-50 border-neutral-200 rounded-8"
       :name="name"
       :id="name"
       :required="required"
