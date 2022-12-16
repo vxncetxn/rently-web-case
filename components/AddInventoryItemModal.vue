@@ -11,7 +11,10 @@ const props = defineProps({
 const formState = useFormState();
 const formRef = ref(null);
 
-const itemField = ref("");
+const itemField = ref({
+  selectedValue: "",
+  group: "",
+});
 const quantityField = ref(1);
 const imageFileField = ref(null);
 
@@ -27,13 +30,19 @@ const submitHandler = (e) => {
   if (isValid) {
     const newFormState = JSON.parse(JSON.stringify(formState.value));
     newFormState.items.push({
-      name: itemField.value,
+      name: itemField.value.selectedValue,
       quantity: quantityField.value,
-      type: "Bedroom",
+      type: itemField.value.group,
       image: "",
     });
     formState.value = newFormState;
 
+    itemField.value = {
+      selectedValue: "",
+      group: "",
+    };
+    quantityField.value = 1;
+    imageFileField.value = null;
     props.closeHandler();
     window.scrollBy({
       top: 100000,

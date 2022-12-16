@@ -1,17 +1,23 @@
 <script setup>
-import { string, bool } from "vue-types";
+import { string, bool, shape } from "vue-types";
 
 defineProps({
   name: string().isRequired,
   label: string().isRequired,
   required: bool().def(false),
-  modelValue: string().isRequired,
+  modelValue: shape({
+    selectedValue: string(),
+    group: string(),
+  }).isRequired,
 });
 
 const emit = defineEmits(["update:modelValue"]);
 
 const inputHandler = (e) => {
-  emit("update:modelValue", e.target.value);
+  emit("update:modelValue", {
+    selectedValue: e.target.value,
+    group: e.target.selectedOptions[0].parentElement.label,
+  });
 };
 </script>
 
@@ -28,7 +34,7 @@ const inputHandler = (e) => {
         :name="name"
         :id="name"
         :required="required"
-        :value="modelValue"
+        :value="modelValue.selectedValue"
         @input="inputHandler"
       >
         <slot></slot>
