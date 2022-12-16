@@ -22,8 +22,21 @@ formState.value.items.forEach((i) => {
   sectionedInventory[i.type].push({ ...i });
 });
 
+const approveHandler = () => {
+  const newData = JSON.parse(JSON.stringify(data.value));
+  const clonedFormState = JSON.parse(JSON.stringify(formState.value));
+  const propIdx = newData.findIndex((d) => d.id === parseInt(route.params.id));
+  newData[propIdx] = clonedFormState;
+
+  data.value = newData;
+  navigateTo(`/property/${route.params.id}`);
+};
+
 onBeforeRouteLeave((to, _, next) => {
-  if (to.name !== "property-id-edit") {
+  if (
+    to.path !== `/property/${route.params.id}/edit` &&
+    to.path !== `/property/${route.params.id}`
+  ) {
     const isConfirmed = window.confirm(
       "Are you sure you want to leave? You still have unsaved edits made that cannot be restored."
     );
@@ -53,7 +66,7 @@ onBeforeRouteLeave((to, _, next) => {
         </svg>
         <Text color="grey">Back to edits</Text>
       </NuxtLink>
-      <PrimaryButton>Approve edits</PrimaryButton>
+      <PrimaryButton @click="approveHandler">Approve edits</PrimaryButton>
     </div>
   </SecondaryBar>
   <Container

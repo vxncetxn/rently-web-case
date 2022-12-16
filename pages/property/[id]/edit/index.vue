@@ -21,7 +21,7 @@ const openHandler = () => (isOpen.value = true);
 const closeHandler = () => (isOpen.value = false);
 
 onBeforeRouteLeave((to, _, next) => {
-  if (to.name !== "property-id-edit-preview") {
+  if (to.path !== `/property/${route.params.id}/edit/preview`) {
     const isConfirmed = window.confirm(
       "Are you sure you want to leave? You still have unsaved edits made that cannot be restored."
     );
