@@ -1,5 +1,4 @@
 <script setup>
-import { computed } from "vue";
 import localData from "~/data.json";
 
 definePageMeta({
@@ -37,7 +36,7 @@ const fullAddress = computed(() => {
         <Text color="grey">Back to all listings</Text>
       </NuxtLink>
       <div class="flex gap-x-16 sm:gap-x-20 lg:gap-x-24">
-        <CustomLink :to="`/property/edit/${route.params.id}`">Edit</CustomLink>
+        <CustomLink :to="`/property/${route.params.id}/edit`">Edit</CustomLink>
         <CustomLink to="">Share</CustomLink>
       </div>
     </div>

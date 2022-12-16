@@ -12,7 +12,7 @@ const route = useRoute();
 const formState = useFormState();
 
 onBeforeRouteLeave((to, _, next) => {
-  if (to.name !== "property-edit-id") {
+  if (to.name !== "property-id-edit") {
     const isConfirmed = window.confirm(
       "Are you sure you want to leave? You still have unsaved edits made that cannot be restored."
     );
@@ -35,7 +35,7 @@ onBeforeRouteLeave((to, _, next) => {
     >
       <NuxtLink
         class="flex items-center gap-x-16 sm:gap-x-20 lg:gap-x-24"
-        :to="`/property/edit/${route.params.id}`"
+        :to="`/property/${route.params.id}/edit`"
       >
         <svg class="w-24 h-24 shrink-0">
           <use href="#chevron-left-icon" />

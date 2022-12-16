@@ -1,5 +1,4 @@
 <script setup>
-import { computed } from "vue";
 import localData from "~/data.json";
 
 definePageMeta({
@@ -22,7 +21,7 @@ const openHandler = () => (isOpen.value = true);
 const closeHandler = () => (isOpen.value = false);
 
 onBeforeRouteLeave((to, _, next) => {
-  if (to.name !== "property-preview-id") {
+  if (to.name !== "property-id-edit-preview") {
     const isConfirmed = window.confirm(
       "Are you sure you want to leave? You still have unsaved edits made that cannot be restored."
     );
@@ -52,7 +51,7 @@ onBeforeRouteLeave((to, _, next) => {
         </svg>
         <Text color="grey">Back to listing</Text>
       </NuxtLink>
-      <NuxtLink :to="`/property/preview/${route.params.id}`"
+      <NuxtLink :to="`/property/${route.params.id}/edit/preview`"
         ><PrimaryButton>Preview edits</PrimaryButton></NuxtLink
       >
     </div>
