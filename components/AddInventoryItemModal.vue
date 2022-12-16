@@ -95,22 +95,15 @@ const submitHandler = (e) => {
             </optgroup>
           </select>
         </div>
-        <div class="flex flex-col gap-y-16">
-          <label class="font-sans text-20 capsize" for="item-quantity"
-            >Quantity</label
-          >
-          <input
-            class="px-16 py-8 font-sans border text-20 capsize bg-neutral-50 border-neutral-200 rounded-8"
-            type="number"
-            id="item-quantity"
-            name="item-quantity"
-            min="1"
-            max="20"
-            required
-            placeholder="1"
-            v-model="quantityField"
-          />
-        </div>
+        <NumberInput
+          name="quantity-field"
+          label="Quantity"
+          :min="1"
+          :max="20"
+          :required="true"
+          placeholder="1"
+          v-model="quantityField"
+        />
         <div class="flex flex-col gap-y-16">
           <Text>Image</Text>
           <div
