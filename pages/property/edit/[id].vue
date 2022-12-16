@@ -8,13 +8,24 @@ definePageMeta({
   },
 });
 
+onBeforeRouteLeave((to, from, next) => {
+  alert("hi");
+  next();
+  return false;
+});
+
 const data = useData();
 const route = useRoute();
 const property = data.value.find((d) => d.id === parseInt(route.params.id));
 
-const inventoryState = computed(() => {
-  return property.items;
-});
+const formState = useFormState();
+if (formState.value === null) {
+  formState.value = property;
+}
+
+const isOpen = ref(false);
+const openHandler = () => (isOpen.value = true);
+const closeHandler = () => (isOpen.value = false);
 </script>
 
 <template>
@@ -28,11 +39,11 @@ const inventoryState = computed(() => {
         >
           <HeaderTwo>Inventory</HeaderTwo>
           <Text>Items that you provide to your tenant in your property</Text>
-          <PrimaryButton>Add inventory item</PrimaryButton>
+          <PrimaryButton @click="openHandler">Add inventory item</PrimaryButton>
         </div>
         <div class="flex flex-col w-full lg:w-3/5 gap-y-48">
           <div class="grid grid-cols-2 gap-12">
-            <div v-for="item in inventoryState" :key="item.name">
+            <div v-for="item in formState.items" :key="item.name">
               <InventoryItemImgCard
                 v-if="item.image"
                 :name="item.name"
@@ -44,4 +55,9 @@ const inventoryState = computed(() => {
         </div>
       </div></div
   ></Container>
+  <AddInventoryItemModal
+    :isOpen="isOpen"
+    :close-handler="closeHandler"
+    title="Add Inventory Item"
+  />
 </template>
