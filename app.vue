@@ -6,4 +6,5 @@
   <Navbar />
   <NuxtPage />
   <div id="portal"></div>
+  <Toast />
 </template>

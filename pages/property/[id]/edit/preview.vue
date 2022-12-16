@@ -11,6 +11,8 @@ definePageMeta({
 const data = useData();
 const route = useRoute();
 const formState = useFormState();
+const toastState = useToastState();
+
 if (formState.value === null) {
   navigateTo(`/property/${route.params.id}/edit`);
 }
@@ -30,6 +32,11 @@ const approveHandler = () => {
 
   data.value = newData;
   navigateTo(`/property/${route.params.id}`);
+  toastState.value = {
+    isPresent: true,
+    message: "Edits have been made successfully.",
+    type: "success",
+  };
 };
 
 onBeforeRouteLeave((to, _, next) => {
