@@ -25,7 +25,7 @@ const submitHandler = (e) => {
   formRef.value.reportValidity();
 
   if (isValid) {
-    const newFormState = { ...formState.value };
+    const newFormState = JSON.parse(JSON.stringify(formState.value));
     newFormState.items.push({
       name: itemField.value,
       quantity: quantityField.value,

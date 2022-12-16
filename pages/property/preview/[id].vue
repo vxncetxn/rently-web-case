@@ -1,5 +1,4 @@
 <script setup>
-import { computed } from "vue";
 import localData from "~/data.json";
 
 definePageMeta({
@@ -10,6 +9,23 @@ definePageMeta({
 
 const data = useData();
 const route = useRoute();
+const formState = useFormState();
+
+onBeforeRouteLeave((to, _, next) => {
+  if (to.name !== "property-edit-id") {
+    const isConfirmed = window.confirm(
+      "Are you sure you want to leave? You still have unsaved edits made that cannot be restored."
+    );
+    if (isConfirmed) {
+      formState.value = null;
+      next();
+    } else {
+      next(false);
+    }
+  } else {
+    next();
+  }
+});
 </script>
 
 <template>

@@ -8,24 +8,34 @@ definePageMeta({
   },
 });
 
-// onBeforeRouteLeave((to, from, next) => {
-//   alert("hi");
-//   next();
-//   return false;
-// });
-
 const data = useData();
 const route = useRoute();
 const property = data.value.find((d) => d.id === parseInt(route.params.id));
 
 const formState = useFormState();
 if (formState.value === null) {
-  formState.value = property;
+  formState.value = JSON.parse(JSON.stringify(property));
 }
 
 const isOpen = ref(false);
 const openHandler = () => (isOpen.value = true);
 const closeHandler = () => (isOpen.value = false);
+
+onBeforeRouteLeave((to, _, next) => {
+  if (to.name !== "property-preview-id") {
+    const isConfirmed = window.confirm(
+      "Are you sure you want to leave? You still have unsaved edits made that cannot be restored."
+    );
+    if (isConfirmed) {
+      formState.value = null;
+      next();
+    } else {
+      next(false);
+    }
+  } else {
+    next();
+  }
+});
 </script>
 
 <template>
@@ -47,7 +57,7 @@ const closeHandler = () => (isOpen.value = false);
       >
     </div>
   </SecondaryBar>
-  <Container
+  <Container v-if="formState"
     ><div class="flex flex-col w-full px-16 py-48 gap-y-24 sm:px-40 lg:px-64">
       <HeaderOne>Edit Listing</HeaderOne>
       <div class="flex flex-col mt-40 lg:flex-row gap-x-32">
