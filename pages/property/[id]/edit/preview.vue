@@ -13,22 +13,22 @@ const route = useRoute();
 const formState = useFormState();
 const toastState = useToastState();
 
-if (formState.value === null) {
+if (formState.value.state === null) {
   navigateTo(`/property/${route.params.id}/edit`);
 }
 
 const sectionedInventory = {};
 itemsReference.forEach((i) => (sectionedInventory[i.name] = []));
 
-formState.value.items.forEach((i) => {
+formState.value.state.items.forEach((i) => {
   sectionedInventory[i.type].push({ ...i });
 });
 
 const approveHandler = () => {
   const newData = JSON.parse(JSON.stringify(data.value));
-  const clonedFormState = JSON.parse(JSON.stringify(formState.value));
+  const clonedState = JSON.parse(JSON.stringify(formState.value.state));
   const propIdx = newData.findIndex((d) => d.id === parseInt(route.params.id));
-  newData[propIdx] = clonedFormState;
+  newData[propIdx] = clonedState;
 
   data.value = newData;
   navigateTo(`/property/${route.params.id}`);
@@ -48,7 +48,7 @@ onBeforeRouteLeave((to, _, next) => {
       "Are you sure you want to leave? You still have unsaved edits made that cannot be restored."
     );
     if (isConfirmed) {
-      formState.value = null;
+      formState.value.state = null;
       next();
     } else {
       next(false);

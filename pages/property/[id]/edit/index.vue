@@ -12,8 +12,11 @@ const route = useRoute();
 const property = data.value.find((d) => d.id === parseInt(route.params.id));
 
 const formState = useFormState();
-if (formState.value === null) {
-  formState.value = JSON.parse(JSON.stringify(property));
+if (formState.value.state === null) {
+  formState.value = {
+    state: JSON.parse(JSON.stringify(property)),
+    isTouched: false,
+  };
 }
 
 const isOpen = ref(false);
@@ -21,15 +24,22 @@ const openHandler = () => (isOpen.value = true);
 const closeHandler = () => (isOpen.value = false);
 
 onBeforeRouteLeave((to, _, next) => {
-  if (to.path !== `/property/${route.params.id}/edit/preview`) {
-    const isConfirmed = window.confirm(
-      "Are you sure you want to leave? You still have unsaved edits made that cannot be restored."
-    );
-    if (isConfirmed) {
-      formState.value = null;
-      next();
+  if (formState.value.isTouched) {
+    if (to.path !== `/property/${route.params.id}/edit/preview`) {
+      const isConfirmed = window.confirm(
+        "Are you sure you want to leave? You still have unsaved edits made that cannot be restored."
+      );
+      if (isConfirmed) {
+        formState.value = {
+          state: null,
+          isTouched: false,
+        };
+        next();
+      } else {
+        next(false);
+      }
     } else {
-      next(false);
+      next();
     }
   } else {
     next();
@@ -51,12 +61,16 @@ onBeforeRouteLeave((to, _, next) => {
         </svg>
         <Text color="grey">Back to listing</Text>
       </NuxtLink>
-      <NuxtLink :to="`/property/${route.params.id}/edit/preview`"
-        ><PrimaryButton>Preview edits</PrimaryButton></NuxtLink
+      <ClientOnly
+        ><NuxtLink :to="`/property/${route.params.id}/edit/preview`">
+          <PrimaryButton :disabled="!formState.isTouched"
+            >Preview edits</PrimaryButton
+          >
+        </NuxtLink></ClientOnly
       >
     </div>
   </SecondaryBar>
-  <Container v-if="formState"
+  <Container v-if="formState.state"
     ><div class="flex flex-col w-full px-16 py-48 gap-y-24 sm:px-40 lg:px-64">
       <HeaderOne>Edit Listing</HeaderOne>
       <div class="flex flex-col gap-32 mt-24 lg:mt-40 lg:flex-row">
@@ -73,7 +87,7 @@ onBeforeRouteLeave((to, _, next) => {
         </div>
         <div class="flex flex-col w-full lg:w-3/5 gap-y-48">
           <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
-            <div v-for="item in formState.items" :key="item.name">
+            <div v-for="item in formState.state.items" :key="item.name">
               <InventoryItemCard
                 :name="item.name"
                 :quantity="item.quantity"

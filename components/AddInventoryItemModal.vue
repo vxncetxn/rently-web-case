@@ -28,14 +28,17 @@ const submitHandler = (e) => {
   formRef.value.reportValidity();
 
   if (isValid) {
-    const newFormState = JSON.parse(JSON.stringify(formState.value));
-    newFormState.items.push({
+    const newState = JSON.parse(JSON.stringify(formState.value.state));
+    newState.items.push({
       name: itemField.value.selectedValue,
       quantity: quantityField.value,
       type: itemField.value.group,
       image: "",
     });
-    formState.value = newFormState;
+    formState.value = {
+      state: newState,
+      isTouched: true,
+    };
 
     itemField.value = {
       selectedValue: "",
@@ -74,7 +77,7 @@ const submitHandler = (e) => {
             <option
               v-for="item in group.items"
               :key="item"
-              :disabled="formState.items.find((i) => i.name === item)"
+              :disabled="formState.state.items.find((i) => i.name === item)"
             >
               {{ item }}
             </option>
