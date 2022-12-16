@@ -6,9 +6,9 @@ defineProps({
   label: string().isRequired,
   min: integer(),
   max: integer(),
-  required: bool(),
+  required: bool().def(false),
   placeholder: string(),
-  modelValue: integer(),
+  modelValue: integer().isRequired,
 });
 
 const emit = defineEmits(["update:modelValue"]);

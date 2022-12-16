@@ -4,8 +4,8 @@ import { string, bool } from "vue-types";
 defineProps({
   name: string().isRequired,
   label: string().isRequired,
-  required: bool(),
-  modelValue: string(),
+  required: bool().def(false),
+  modelValue: string().isRequired,
 });
 
 const emit = defineEmits(["update:modelValue"]);
