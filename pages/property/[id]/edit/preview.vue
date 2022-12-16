@@ -11,6 +11,19 @@ const data = useData();
 const route = useRoute();
 const formState = useFormState();
 
+const sectionedInventory = {
+  "Bathroom & Laundry": [],
+  Bedroom: [],
+  Kitchen: [],
+  "Entertainment & Internet": [],
+  Heating: [],
+  "House Safety": [],
+};
+
+formState.value.items.forEach((i) => {
+  sectionedInventory[i.type].push({ ...i });
+});
+
 onBeforeRouteLeave((to, _, next) => {
   if (to.name !== "property-id-edit") {
     const isConfirmed = window.confirm(
@@ -48,6 +61,30 @@ onBeforeRouteLeave((to, _, next) => {
   <Container
     ><div class="flex flex-col w-full px-16 py-48 gap-y-24 sm:px-40 lg:px-64">
       <HeaderOne>Preview Edits</HeaderOne>
-      <div class="flex flex-col mt-40 lg:flex-row gap-x-32"></div></div
+      <div class="flex flex-col mt-24 lg:w-3/5 gap-y-48 lg:mt-40">
+        <HeaderTwo>Inventory</HeaderTwo>
+        <div class="flex flex-col gap-y-48">
+          <div
+            class="flex flex-col gap-y-24"
+            v-for="[section, items] in Object.entries(
+              sectionedInventory
+            ).filter(([_, items]) => items.length)"
+            :key="section"
+          >
+            <Text size="lg">
+              {{ section }}
+            </Text>
+            <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
+              <div v-for="item in items" :key="item.name">
+                <InventoryItemCard
+                  :name="item.name"
+                  :quantity="item.quantity"
+                  :image="item.image ? item.image : ''"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div
   ></Container>
 </template>

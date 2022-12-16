@@ -45,7 +45,7 @@ const fullAddress = computed(() => {
     ><div class="flex flex-col px-16 py-48 gap-y-24 sm:px-40 lg:px-64">
       <HeaderOne>{{ title }}</HeaderOne>
       <Text size="lg" color="grey">{{ fullAddress }}</Text>
-      <div class="flex flex-col mt-40 lg:flex-row gap-x-32">
+      <div class="flex flex-col mt-24 lg:mt-40 lg:flex-row gap-x-32">
         <div class="flex flex-col w-full lg:w-3/5 gap-y-48">
           <img
             class="object-cover w-full rounded-4"

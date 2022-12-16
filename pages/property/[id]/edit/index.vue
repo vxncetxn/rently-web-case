@@ -59,13 +59,17 @@ onBeforeRouteLeave((to, _, next) => {
   <Container v-if="formState"
     ><div class="flex flex-col w-full px-16 py-48 gap-y-24 sm:px-40 lg:px-64">
       <HeaderOne>Edit Listing</HeaderOne>
-      <div class="flex flex-col mt-40 lg:flex-row gap-x-32">
+      <div class="flex flex-col gap-32 mt-24 lg:mt-40 lg:flex-row">
         <div
-          class="flex flex-col items-start gap-y-40 mt-96 lg:mt-0 sticky top-[calc(var(--bars-h-lg)+32px)] w-full lg:w-2/5 h-[calc(100vh-var(--bars-h-lg)-64px)]"
+          class="flex flex-col items-start gap-y-24 lg:sticky top-[calc(var(--bars-h-lg)+32px)] w-full lg:w-2/5 lg:h-[calc(100vh-var(--bars-h-lg)-64px)]"
         >
           <HeaderTwo>Inventory</HeaderTwo>
           <Text>Items that you provide to your tenant in your property</Text>
-          <PrimaryButton @click="openHandler">Add inventory item</PrimaryButton>
+          <div class="mt-24">
+            <PrimaryButton @click="openHandler"
+              >Add inventory item</PrimaryButton
+            >
+          </div>
         </div>
         <div class="flex flex-col w-full lg:w-3/5 gap-y-48">
           <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
