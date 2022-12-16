@@ -1,5 +1,5 @@
 <script setup>
-import itemTypes from "~/item-types.json";
+import itemsReference from "~/items-reference.json";
 import { bool, func, string } from "vue-types";
 
 const props = defineProps({
@@ -67,7 +67,7 @@ const submitHandler = (e) => {
           v-model="itemField"
           ><option value="">Choose an item</option>
           <optgroup
-            v-for="group in itemTypes"
+            v-for="group in itemsReference"
             :key="group.name"
             :label="group.name"
           >

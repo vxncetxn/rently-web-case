@@ -1,32 +1,20 @@
 <script setup>
 import { string, shape, oneOf, integer, arrayOf } from "vue-types";
+import itemsReference from "~/items-reference.json";
 
 const props = defineProps({
   inventory: arrayOf(
     shape({
       name: string(),
       image: string(),
-      type: oneOf([
-        "Bathroom & Laundry",
-        "Bedroom",
-        "Kitchen",
-        "Entertainment & Internet",
-        "Heating",
-        "House Safety",
-      ]),
+      type: oneOf(itemsReference.map((i) => i.name)),
       quantity: integer(),
     })
   ).isRequired,
 });
 
-const sectionedInventory = {
-  "Bathroom & Laundry": [],
-  Bedroom: [],
-  Kitchen: [],
-  "Entertainment & Internet": [],
-  Heating: [],
-  "House Safety": [],
-};
+const sectionedInventory = {};
+itemsReference.forEach((i) => (sectionedInventory[i.name] = []));
 const sortedInventory = [...props.inventory].sort((a, b) => {
   if (b.image && !a.image) {
     return 1;

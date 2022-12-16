@@ -1,5 +1,6 @@
 <script setup>
 import localData from "~/data.json";
+import itemsReference from "~/items-reference.json";
 
 definePageMeta({
   validate: async (route) => {
@@ -11,14 +12,8 @@ const data = useData();
 const route = useRoute();
 const formState = useFormState();
 
-const sectionedInventory = {
-  "Bathroom & Laundry": [],
-  Bedroom: [],
-  Kitchen: [],
-  "Entertainment & Internet": [],
-  Heating: [],
-  "House Safety": [],
-};
+const sectionedInventory = {};
+itemsReference.forEach((i) => (sectionedInventory[i.name] = []));
 
 formState.value.items.forEach((i) => {
   sectionedInventory[i.type].push({ ...i });

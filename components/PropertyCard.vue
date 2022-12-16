@@ -1,6 +1,6 @@
 <script setup>
-import { computed } from "vue";
 import { string, bool, shape, oneOf, integer, arrayOf } from "vue-types";
+import itemsReference from "~/items-reference.json";
 
 const props = defineProps({
   property: shape({
@@ -42,14 +42,7 @@ const props = defineProps({
       shape({
         name: string(),
         image: string(),
-        type: oneOf([
-          "Bathroom & Laundry",
-          "Bedroom",
-          "Kitchen",
-          "Entertainment & Internet",
-          "Heating",
-          "House Safety",
-        ]),
+        type: oneOf(itemsReference.map((i) => i.name)),
         quantity: integer(),
       })
     ),
