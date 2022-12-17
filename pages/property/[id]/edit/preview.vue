@@ -78,11 +78,9 @@ onBeforeRouteLeave((to, _, next) => {
 
 <template>
   <SecondaryBar>
-    <div
-      class="flex items-center justify-between h-full gap-x-16 sm:gap-x-20 lg:gap-x-24"
-    >
+    <div class="flex items-center justify-between h-full">
       <NuxtLink
-        class="flex items-center gap-x-16 sm:gap-x-20 lg:gap-x-24"
+        class="flex items-center gap-x-8 sm:gap-x-16 lg:gap-x-24"
         :to="`/property/${route.params.id}/edit`"
       >
         <svg class="w-24 h-24 shrink-0">

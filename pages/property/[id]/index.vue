@@ -37,7 +37,7 @@ useHead({
       class="flex items-center justify-between h-full gap-x-16 sm:gap-x-20 lg:gap-x-24"
     >
       <NuxtLink
-        class="flex items-center gap-x-16 sm:gap-x-20 lg:gap-x-24"
+        class="flex items-center gap-x-8 sm:gap-x-16 lg:gap-x-24"
         to="/"
       >
         <svg class="w-24 h-24 shrink-0">
@@ -45,7 +45,7 @@ useHead({
         </svg>
         <Text color="grey">Back to all listings</Text>
       </NuxtLink>
-      <div class="flex gap-x-16 sm:gap-x-20 lg:gap-x-24">
+      <div class="flex gap-x-8 sm:gap-x-16 lg:gap-x-24">
         <CustomLink :to="`/property/${route.params.id}/edit`">Edit</CustomLink>
         <CustomLink to="">Share</CustomLink>
       </div>
