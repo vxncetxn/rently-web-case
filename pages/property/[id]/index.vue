@@ -19,6 +19,16 @@ const title = computed(() => {
 const fullAddress = computed(() => {
   return `${property.address.block} ${property.address.street} #${property.address.floor}-${property.address.unit}, S(${property.address.postalCode})`;
 });
+
+useHead({
+  title: `${title.value} | rently.sg`,
+  meta: [
+    {
+      name: "og:title",
+      content: `${title.value} | rently.sg`,
+    },
+  ],
+});
 </script>
 
 <template>

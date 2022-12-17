@@ -43,6 +43,16 @@ const approveHandler = () => {
   };
 };
 
+useHead({
+  title: "Preview Edits | rently.sg",
+  meta: [
+    {
+      name: "og:title",
+      content: "Preview Edits | rently.sg",
+    },
+  ],
+});
+
 onBeforeRouteLeave((to, _, next) => {
   if (
     to.path !== `/property/${route.params.id}/edit` &&

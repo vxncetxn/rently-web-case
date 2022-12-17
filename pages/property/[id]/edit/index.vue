@@ -23,6 +23,16 @@ const isOpen = ref(false);
 const openHandler = () => (isOpen.value = true);
 const closeHandler = () => (isOpen.value = false);
 
+useHead({
+  title: "Edit Listing | rently.sg",
+  meta: [
+    {
+      name: "og:title",
+      content: "Edit Listing | rently.sg",
+    },
+  ],
+});
+
 onBeforeRouteLeave((to, _, next) => {
   if (formState.value.isTouched) {
     if (to.path !== `/property/${route.params.id}/edit/preview`) {
