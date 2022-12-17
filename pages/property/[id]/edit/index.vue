@@ -92,15 +92,12 @@ onBeforeRouteLeave((to, _, next) => {
                 :name="item.name"
                 :quantity="item.quantity"
                 :image="item.image ? item.image : ''"
+                :type="item.type"
               />
             </div>
           </div>
         </div>
       </div></div
   ></Container>
-  <AddInventoryItemModal
-    :isOpen="isOpen"
-    :close-handler="closeHandler"
-    title="Add Inventory Item"
-  />
+  <AddInventoryItemModal :isOpen="isOpen" :close-handler="closeHandler" />
 </template>

@@ -1,21 +1,37 @@
 <script setup>
 import itemsReference from "~/items-reference.json";
-import { bool, func, string } from "vue-types";
+import { bool, func, string, integer } from "vue-types";
 
 const props = defineProps({
   isOpen: bool().isRequired,
   closeHandler: func().isRequired,
+  name: string().isRequired,
+  quantity: integer().isRequired,
+  type: string().isRequired,
+  image: string(),
 });
 
 const formState = useFormState();
 const formRef = ref(null);
 
+const isDirty = ref(false);
 const itemField = ref({
-  selectedValue: "",
-  group: "",
+  selectedValue: props.name,
+  group: props.type,
 });
-const quantityField = ref(1);
+const quantityField = ref(props.quantity);
 const imageFileField = ref(null);
+
+watchEffect(() => {
+  if (
+    itemField.value.selectedValue !== props.name ||
+    quantityField.value !== props.quantity
+  ) {
+    isDirty.value = true;
+  } else {
+    isDirty.value = false;
+  }
+});
 
 const uploadHandler = (e) => {
   imageFileField.value = e;
@@ -28,29 +44,18 @@ const submitHandler = (e) => {
 
   if (isValid) {
     const newState = JSON.parse(JSON.stringify(formState.value.state));
-    newState.items.push({
+    newState.items[newState.items.findIndex((d) => d.name === props.name)] = {
       name: itemField.value.selectedValue,
       quantity: quantityField.value,
       type: itemField.value.group,
       image: "",
-    });
+    };
     formState.value = {
       state: newState,
       isTouched: true,
     };
 
-    itemField.value = {
-      selectedValue: "",
-      group: "",
-    };
-    quantityField.value = 1;
-    imageFileField.value = null;
     props.closeHandler();
-    window.scrollBy({
-      top: 100000,
-      left: 0,
-      behavior: "smooth",
-    });
   }
 };
 </script>
@@ -59,7 +64,7 @@ const submitHandler = (e) => {
   <Modal
     :isOpen="isOpen"
     :close-handler="closeHandler"
-    title="Add Inventory Item"
+    title="Edit Inventory Item"
     ><form ref="formRef">
       <div class="flex flex-col gap-y-32">
         <Select
@@ -97,7 +102,9 @@ const submitHandler = (e) => {
           :modelValue="imageFileField"
           @upload="uploadHandler"
         />
-        <PrimaryButton @click="submitHandler">Add item</PrimaryButton>
+        <PrimaryButton @click="submitHandler" :disabled="!isDirty"
+          >Edit item</PrimaryButton
+        >
       </div>
     </form></Modal
   >

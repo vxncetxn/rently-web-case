@@ -5,6 +5,7 @@ const props = defineProps({
   name: string().isRequired,
   quantity: integer().isRequired,
   image: string(),
+  type: string().isRequired,
 });
 
 const formState = useFormState();
@@ -20,6 +21,10 @@ const deleteHandler = () => {
     isTouched: true,
   };
 };
+
+const isOpen = ref(false);
+const openHandler = () => (isOpen.value = true);
+const closeHandler = () => (isOpen.value = false);
 </script>
 
 <template>
@@ -34,6 +39,7 @@ const deleteHandler = () => {
     >
       <button
         class="font-sans text-white text-14 sm:text-16 lg:text-18 capsize"
+        @click="openHandler"
       >
         Edit
       </button>
@@ -45,4 +51,12 @@ const deleteHandler = () => {
       </button>
     </div>
   </div>
+  <EditInventoryItemModal
+    :isOpen="isOpen"
+    :close-handler="closeHandler"
+    :name="name"
+    :quantity="quantity"
+    :type="type"
+    :image="image"
+  />
 </template>
