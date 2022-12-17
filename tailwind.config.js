@@ -44,6 +44,7 @@ module.exports = {
       48: ["3rem", "1"],
     },
     spacing: {
+      unset: "unset",
       px: "1px",
       0: "0",
       2: "0.125rem",
@@ -85,6 +86,7 @@ module.exports = {
     require("tailwindcss-capsize"),
     plugin(function ({ addVariant }) {
       addVariant("hover-none", "@media (hover: none)");
+      addVariant("supports-aspect-ratio", "@supports (aspect-ratio: 3/2)");
     }),
   ],
 };
