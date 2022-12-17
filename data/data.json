@@ -142,6 +142,12 @@
         "image": "wardrobe.jpg",
         "type": "Bedroom",
         "quantity": 2
+      },
+      {
+        "name": "Fire Extinguisher",
+        "image": "",
+        "type": "House Safety",
+        "quantity": 1
       }
     ]
   },
@@ -481,12 +487,6 @@
       },
       {
         "name": "First Aid Kit",
-        "image": "",
-        "type": "House Safety",
-        "quantity": 1
-      },
-      {
-        "name": "Fire Extinguisher",
         "image": "",
         "type": "House Safety",
         "quantity": 1
