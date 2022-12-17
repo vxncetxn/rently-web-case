@@ -95,7 +95,7 @@ const submitHandler = (e) => {
           name="image-field"
           label="Image"
           :modelValue="imageFileField"
-          @upload="uploadHandler"
+          @file-change="uploadHandler"
         />
         <PrimaryButton @click="submitHandler">Add item</PrimaryButton>
       </div>

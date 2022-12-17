@@ -15,14 +15,14 @@ const props = defineProps({
   }).isRequired,
 });
 
-const emit = defineEmits(["upload"]);
+const emit = defineEmits(["file-change"]);
 
 const uploadedImageRef = ref(null);
 const dropZoneRef = ref();
 const inputRef = ref();
 
 const uploadHandler = (e) => {
-  emit("upload", e.target.files[0]);
+  emit("file-change", e.target.files[0]);
 };
 function dropHandler(files) {
   const dataTransfer = new DataTransfer();
@@ -31,6 +31,13 @@ function dropHandler(files) {
   inputRef.value.dispatchEvent(new Event("change"));
 }
 const { isOverDropZone } = useDropZone(dropZoneRef, dropHandler);
+
+const removeImageHandler = () => {
+  emit("file-change", null);
+};
+const changeImageHandler = () => {
+  inputRef.value.click();
+};
 
 watchEffect(() => {
   if (props.modelValue) {
@@ -47,18 +54,34 @@ watchEffect(() => {
   <div class="flex flex-col gap-y-16">
     <Text>{{ label }}</Text>
     <div
-      :class="`relative rounded-8 aspect-[3/2] ${
+      :class="`relative rounded-8 w-full aspect-[3/2] ${
         modelValue ? '' : 'border border-neutral-200 p-16'
       }`"
       ref="dropZoneRef"
     >
-      <div class="w-full h-full" v-if="modelValue">
+      <div class="relative w-full h-full group" v-if="modelValue">
         <img
           class="object-cover w-full h-full rounded-8"
           ref="uploadedImageRef"
           src=""
           alt=""
         />
+        <div
+          class="absolute top-0 right-0 z-10 flex px-16 sm:px-20 lg:px-24 py-8 sm:py-12 translate-x-8 translate-y-8 bg-black opacity-0 rounded-8 gap-x-12 sm:gap-x-16 lg:gap-x-24 group-hover:opacity-100 group-hover:-translate-y-8 transition-[opacity,transform] duration-[200ms] ease-[cubic-bezier(0.45, 0, 0.55, 1)] hover-none:opacity-100 hover-none:-translate-y-8"
+        >
+          <button
+            class="font-sans text-white text-14 sm:text-16 lg:text-18 capsize"
+            @click="changeImageHandler"
+          >
+            Change Image
+          </button>
+          <button
+            class="font-sans text-white text-14 sm:text-16 lg:text-18 capsize"
+            @click="removeImageHandler"
+          >
+            Remove
+          </button>
+        </div>
       </div>
       <label
         :class="`flex flex-col gap-y-12 justify-center items-center w-full h-full border border-dashed p-32 sm:p-48 lg:p-64 rounded-4 ${
