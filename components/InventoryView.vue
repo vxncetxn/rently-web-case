@@ -1,6 +1,6 @@
 <script setup>
 import { string, shape, oneOf, integer, arrayOf } from "vue-types";
-import itemsReference from "~/items-reference.json";
+import itemsReference from "~/data/items-reference.json";
 
 const props = defineProps({
   inventory: arrayOf(

@@ -1,5 +1,5 @@
 <script setup>
-import itemsReference from "~/items-reference.json";
+import itemsReference from "~/data/items-reference.json";
 import { bool, func, string, integer } from "vue-types";
 
 const props = defineProps({

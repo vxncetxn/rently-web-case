@@ -1,6 +1,6 @@
 <script setup>
-import localData from "~/data.json";
-import itemsReference from "~/items-reference.json";
+import localData from "~/data/data.json";
+import itemsReference from "~/data/items-reference.json";
 
 definePageMeta({
   validate: async (route) => {
