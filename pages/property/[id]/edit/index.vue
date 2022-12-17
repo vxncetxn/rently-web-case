@@ -88,7 +88,7 @@ onBeforeRouteLeave((to, _, next) => {
         <div class="flex flex-col w-full lg:w-3/5 gap-y-48">
           <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
             <div v-for="item in formState.state.items" :key="item.name">
-              <InventoryItemCard
+              <InventoryItemEditCard
                 :name="item.name"
                 :quantity="item.quantity"
                 :image="item.image ? item.image : ''"
