@@ -48,7 +48,7 @@ const submitHandler = (e) => {
       name: itemField.value.selectedValue,
       quantity: quantityField.value,
       type: itemField.value.group,
-      image: "",
+      image: props.image,
     };
     formState.value = {
       state: newState,
