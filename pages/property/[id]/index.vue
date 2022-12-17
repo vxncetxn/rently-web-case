@@ -94,7 +94,7 @@ useHead({
           <InventoryView :inventory="property.items" />
         </div>
         <div
-          class="flex flex-col gap-y-40 mt-96 lg:mt-0 sticky top-[calc(var(--bars-h-lg)+32px)] w-full lg:w-2/5 bg-neutral-50 h-[calc(100vh-var(--bars-h-lg)-64px)] rounded-4 border border-neutral-200 px-24 sm:px-32 lg:px-40 py-32"
+          class="flex flex-col gap-y-40 mt-96 lg:mt-0 sticky top-[calc(var(--bars-h-lg)+32px)] w-full lg:w-2/5 bg-neutral-50 lg:h-[calc(100vh-var(--bars-h-lg)-64px)] rounded-4 border border-neutral-200 px-24 sm:px-32 lg:px-40 py-32"
         >
           <div class="flex items-end gap-x-12">
             <p class="font-serif text-40 lg:text-48 capsize">
@@ -140,7 +140,9 @@ useHead({
               ><Text v-else>Maintenance not included</Text></BulletListItem
             >
           </ul>
-          <div class="flex flex-col items-end mt-auto text-right gap-y-20">
+          <div
+            class="flex flex-col items-end mt-48 text-right lg:mt-auto gap-y-20"
+          >
             <PrimaryButton>Make enquiry</PrimaryButton
             ><Text size="sm" color="grey"
               >Listed fee is before any additional charges such as utilities and
