@@ -1,15 +1,15 @@
 <script setup>
-import { computed } from "vue";
-import data from "~/data.json";
+import localData from "~/data/data.json";
 
 definePageMeta({
   validate: async (route) => {
-    return data.map((d) => d.id).includes(parseInt(route.params.id));
+    return localData.map((d) => d.id).includes(parseInt(route.params.id));
   },
 });
 
+const data = useData();
 const route = useRoute();
-const property = data.find((d) => d.id === parseInt(route.params.id));
+const property = data.value.find((d) => d.id === parseInt(route.params.id));
 
 const title = computed(() => {
   return property.isWholeHouse
@@ -19,15 +19,43 @@ const title = computed(() => {
 const fullAddress = computed(() => {
   return `${property.address.block} ${property.address.street} #${property.address.floor}-${property.address.unit}, S(${property.address.postalCode})`;
 });
+
+useHead({
+  title: `${title.value} | rently.sg`,
+  meta: [
+    {
+      name: "og:title",
+      content: `${title.value} | rently.sg`,
+    },
+  ],
+});
 </script>
 
 <template>
-  <SecondaryBar />
+  <SecondaryBar>
+    <div
+      class="flex items-center justify-between h-full gap-x-16 sm:gap-x-20 lg:gap-x-24"
+    >
+      <NuxtLink
+        class="flex items-center gap-x-16 sm:gap-x-20 lg:gap-x-24"
+        to="/"
+      >
+        <svg class="w-24 h-24 shrink-0">
+          <use href="#chevron-left-icon" />
+        </svg>
+        <Text color="grey">Back to all listings</Text>
+      </NuxtLink>
+      <div class="flex gap-x-16 sm:gap-x-20 lg:gap-x-24">
+        <CustomLink :to="`/property/${route.params.id}/edit`">Edit</CustomLink>
+        <CustomLink to="">Share</CustomLink>
+      </div>
+    </div>
+  </SecondaryBar>
   <Container
     ><div class="flex flex-col px-16 py-48 gap-y-24 sm:px-40 lg:px-64">
       <HeaderOne>{{ title }}</HeaderOne>
       <Text size="lg" color="grey">{{ fullAddress }}</Text>
-      <div class="flex flex-col mt-40 lg:flex-row gap-x-32">
+      <div class="flex flex-col mt-24 lg:mt-40 lg:flex-row gap-x-32">
         <div class="flex flex-col w-full lg:w-3/5 gap-y-48">
           <img
             class="object-cover w-full rounded-4"

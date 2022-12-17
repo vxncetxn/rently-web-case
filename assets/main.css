@@ -63,6 +63,19 @@ html {
   transform: translateY(0);
 }
 
+.toast-anim-enter-from,
+.toast-anim-leave-to {
+  transform: translate(-50%, calc(-100% - 64px));
+}
+.toast-anim-enter-active,
+.toast-anim-leave-active {
+  transition: transform 400ms cubic-bezier(0.45, 0, 0.55, 1);
+}
+.toast-anim-enter-to,
+.toast-anim-leave-from {
+  transform: translate(-50%, 0);
+}
+
 @media (min-width: 640px) {
   .modal-anim-enter-from,
   .modal-anim-leave-to {

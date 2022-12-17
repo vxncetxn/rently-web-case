@@ -5,7 +5,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "cf-pages:build": "NITRO_PRESET=cloudflare-pages pnpm dlx nuxi build",
+    "cf-pages:preview": "pnpm dlx wrangler pages dev .output/public",
+    "cf-pages:deploy": "pnpm dlx wrangler pages publish .output/public"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.1.3",

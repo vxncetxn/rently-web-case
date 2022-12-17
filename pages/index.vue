@@ -1,5 +1,15 @@
 <script setup>
-import data from "~/data.json";
+const data = useData();
+
+useHead({
+  title: "Properties for Rent in Singapore | rently.sg",
+  meta: [
+    {
+      name: "og:title",
+      content: "Properties for Rent in Singapore | rently.sg",
+    },
+  ],
+});
 </script>
 
 <template>
@@ -10,7 +20,7 @@ import data from "~/data.json";
     >
       <img
         class="object-cover w-full h-[calc(var(--not-bars-h-def)*0.4)] sm:h-[calc(var(--not-bars-h-sm)*0.4)] lg:w-[calc(100vw-min(64rem,60vw))] lg:h-full"
-        src="/map-placeholder.png"
+        src="/mock-images/map-placeholder.png"
         alt="placeholder for map component"
       />
     </div>

@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Bathroom & Laundry",
+    "items": ["Bathtub", "Bidet", "Hairdryer", "Shower", "Washing Machine"]
+  },
+  {
+    "name": "Bedroom",
+    "items": ["Baby Cot", "Iron", "Safe", "Wardrobe", "Work Desk"]
+  },
+  {
+    "name": "Kitchen",
+    "items": [
+      "Coffee Maker",
+      "Dining Table",
+      "Dishwasher",
+      "Kettle",
+      "Microwave",
+      "Oven",
+      "Refrigerator",
+      "Toaster"
+    ]
+  },
+  { "name": "Entertainment & Internet", "items": ["TV", "Wifi"] },
+  { "name": "Heating", "items": ["Aircon", "Ceiling Fan"] },
+  {
+    "name": "House Safety",
+    "items": ["Fire Extinguisher", "First Aid Kit", "Smoke Alarm"]
+  }
+]

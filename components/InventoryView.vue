@@ -1,32 +1,20 @@
 <script setup>
 import { string, shape, oneOf, integer, arrayOf } from "vue-types";
+import itemsReference from "~/data/items-reference.json";
 
 const props = defineProps({
   inventory: arrayOf(
     shape({
       name: string(),
       image: string(),
-      type: oneOf([
-        "Bathroom & Laundry",
-        "Bedroom",
-        "Kitchen",
-        "Entertainment & Internet",
-        "Heating",
-        "House Safety",
-      ]),
+      type: oneOf(itemsReference.map((i) => i.name)),
       quantity: integer(),
     })
   ).isRequired,
 });
 
-const sectionedInventory = {
-  "Bathroom & Laundry": [],
-  Bedroom: [],
-  Kitchen: [],
-  "Entertainment & Internet": [],
-  Heating: [],
-  "House Safety": [],
-};
+const sectionedInventory = {};
+itemsReference.forEach((i) => (sectionedInventory[i.name] = []));
 const sortedInventory = [...props.inventory].sort((a, b) => {
   if (b.image && !a.image) {
     return 1;
@@ -46,14 +34,14 @@ const closeHandler = () => (isOpen.value = false);
 
 <template>
   <div class="flex flex-col gap-y-24">
-    <div class="grid grid-cols-2 gap-12">
+    <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
       <div v-for="item in sortedInventory.slice(0, 6)" :key="item.name">
-        <InventoryItemImgCard
-          v-if="item.image"
-          :name="item.name"
-          :image="item.image"
-        />
-        <InventoryItemDefCard v-else :name="item.name" />
+        <ClientOnly
+          ><InventoryItemCard
+            :name="item.name"
+            :quantity="item.quantity"
+            :image="item.image ? item.image : ''"
+        /></ClientOnly>
       </div>
     </div>
     <div class="flex flex-col items-center">
@@ -74,14 +62,13 @@ const closeHandler = () => (isOpen.value = false);
         <Text size="lg">
           {{ section }}
         </Text>
-        <div class="grid grid-cols-2 gap-12">
+        <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
           <div v-for="item in items" :key="item.name">
-            <InventoryItemImgCard
-              v-if="item.image"
+            <InventoryItemCard
               :name="item.name"
-              :image="item.image"
+              :quantity="item.quantity"
+              :image="item.image ? item.image : ''"
             />
-            <InventoryItemDefCard v-else :name="item.name" />
           </div>
         </div>
       </div>
