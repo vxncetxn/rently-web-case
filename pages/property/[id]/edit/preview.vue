@@ -32,6 +32,10 @@ const approveHandler = () => {
 
   data.value = newData;
   navigateTo(`/property/${route.params.id}`);
+  formState.value = {
+    state: null,
+    isTouched: false,
+  };
   toastState.value = {
     isPresent: true,
     message: "Edits have been made successfully.",
@@ -48,7 +52,10 @@ onBeforeRouteLeave((to, _, next) => {
       "Are you sure you want to leave? You still have unsaved edits made that cannot be restored."
     );
     if (isConfirmed) {
-      formState.value.state = null;
+      formState.value = {
+        state: null,
+        isTouched: false,
+      };
       next();
     } else {
       next(false);

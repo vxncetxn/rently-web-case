@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: [
@@ -80,5 +81,10 @@ module.exports = {
       lg: "1034px",
     },
   },
-  plugins: [require("tailwindcss-capsize")],
+  plugins: [
+    require("tailwindcss-capsize"),
+    plugin(function ({ addVariant }) {
+      addVariant("hover-none", "@media (hover: none)");
+    }),
+  ],
 };
