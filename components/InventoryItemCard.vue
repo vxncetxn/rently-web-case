@@ -11,7 +11,7 @@ defineProps({
 <template>
   <div class="relative" v-if="image">
     <img
-      class="w-full aspect-[3/2] object-cover"
+      class="object-cover w-full h-160 sm:h-280 supports-aspect-ratio:aspect-[3/2] supports-aspect-ratio:h-unset sm:supports-aspect-ratio:h-unset"
       :src="`/mock-images/${image}`"
       :alt="name"
     />
@@ -26,7 +26,7 @@ defineProps({
     </div>
   </div>
   <div
-    class="flex flex-col justify-center items-center gap-y-16 w-full aspect-[3/2] bg-neutral-50 border border-neutral-200"
+    class="flex flex-col items-center justify-center border gap-y-16 bg-neutral-50 border-neutral-200 w-full h-160 sm:h-280 supports-aspect-ratio:aspect-[3/2] supports-aspect-ratio:h-unset sm:supports-aspect-ratio:h-unset"
     v-else
   >
     <svg class="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">

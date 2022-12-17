@@ -110,13 +110,13 @@ onBeforeRouteLeave((to, _, next) => {
               {{ section }}
             </Text>
             <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-12">
-              <div v-for="item in items" :key="item.name">
-                <InventoryItemCard
-                  :name="item.name"
-                  :quantity="item.quantity"
-                  :image="item.image ? item.image : ''"
-                />
-              </div>
+              <InventoryItemCard
+                v-for="item in items"
+                :key="item.name"
+                :name="item.name"
+                :quantity="item.quantity"
+                :image="item.image ? item.image : ''"
+              />
             </div>
           </div>
         </div>
